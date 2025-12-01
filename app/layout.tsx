@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-jetski-tab-id="2114578642">
-      <body className={cn("min-h-screen bg-black font-sans antialiased selection:bg-white/20", inter.variable)}>
+      <body className={cn("min-h-screen bg-black font-sans antialiased selection:bg-white/20")}>
         {children}
       </body>
     </html>

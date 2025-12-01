@@ -8,7 +8,7 @@ const services = [
   {
     icon: <Palette className="w-8 h-8 text-blue-400" />,
     title: "Brand Identity",
-    description: "Crafting visual systems that speak louder than words. We build brands that resonate and endure.",
+    description: "Crafting visual systems that speak louder than words. I build brands that resonate and endure.",
   },
   {
     icon: <Smartphone className="w-8 h-8 text-purple-400" />,
@@ -18,12 +18,12 @@ const services = [
   {
     icon: <Code2 className="w-8 h-8 text-indigo-400" />,
     title: "Development",
-    description: "Clean, scalable code that powers your vision. We build robust solutions using cutting-edge tech.",
+    description: "Clean, scalable code that powers your vision. I build robust solutions using cutting-edge tech.",
   },
   {
     icon: <Rocket className="w-8 h-8 text-pink-400" />,
     title: "Growth Strategy",
-    description: "Data-driven insights to scale your digital presence. We help you reach and engage your audience.",
+    description: "Data-driven insights to scale your digital presence. I help you reach and engage your audience.",
   },
 ]
 

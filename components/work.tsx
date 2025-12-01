@@ -49,7 +49,7 @@ export function Work() {
               transition={{ delay: 0.1 }}
               className="text-xl text-white/60 max-w-md"
             >
-              A showcase of our most recent digital transformations.
+              A showcase of my most recent digital transformations.
             </motion.p>
           </div>
           <motion.button

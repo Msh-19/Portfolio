@@ -22,7 +22,7 @@ export default function Home() {
             <span className="text-gradient">the future?</span>
           </h2>
           <p className="text-xl text-white/60 mb-12 max-w-2xl mx-auto">
-            Let's collaborate to build something extraordinary. Your vision, our expertise.
+            Let's collaborate to build something extraordinary. Your vision, my expertise.
           </p>
           <button className="px-10 py-5 bg-white text-black rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]">
             Start a Project
