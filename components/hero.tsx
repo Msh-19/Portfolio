@@ -36,9 +36,9 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter mb-8 text-gradient"
         >
-          Digital
+          I build
           <br />
-          Alchemy
+          Software
         </motion.h1>
 
         <motion.p
@@ -47,8 +47,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed"
         >
-          I transform complex ideas into fluid, intuitive digital experiences. Blending art, technology, and strategy
-          to shape the future.
+          I turn complex ideas into clear, easy-to-use digital experiences, combining design and technology to build practical solutions
         </motion.p>
 
         <motion.div
@@ -68,9 +67,11 @@ export function Hero() {
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-white opacity-0 group-hover:opacity-100 transition-opacity" />
           </a>
+          <a href="https://t.me/MohammedShemim">
           <button className="px-8 py-4 glass rounded-full font-semibold text-lg text-white hover:bg-white/10 transition-all hover:scale-105">
             Contact Me
           </button>
+          </a>
         </motion.div>
       </div>
 

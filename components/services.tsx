@@ -3,6 +3,7 @@
 import { GlassCard } from "@/components/ui/glass-card"
 import { motion } from "framer-motion"
 import { Code2, Palette, Rocket, Smartphone } from 'lucide-react'
+import Link from "next/link"
 
 const services = [
   {
@@ -65,9 +66,9 @@ export function Services() {
                   <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
                   <p className="text-white/60 leading-relaxed">{service.description}</p>
                 </div>
-                <div className="mt-8 flex items-center gap-2 text-sm font-medium text-white/40 group-hover:text-white transition-colors">
+                <Link href="#contact" className="mt-8 flex items-center gap-2 text-sm font-medium text-white/40 group-hover:text-white transition-colors">
                   Learn more <div className="w-4 h-[1px] bg-current transition-all group-hover:w-8" />
-                </div>
+                </Link>
               </GlassCard>
             </motion.div>
           ))}

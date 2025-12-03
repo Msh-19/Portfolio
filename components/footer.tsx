@@ -30,10 +30,9 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-6">Socials</h4>
             <ul className="space-y-4 text-white/60">
-              <li><Link href="#" className="hover:text-white transition-colors">Instagram</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Twitter</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">LinkedIn</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Dribbble</Link></li>
+              <li><Link href="https://www.instagram.com/momemesh_19/" className="hover:text-white transition-colors">Instagram</Link></li>
+              <li><Link href="https://x.com/MSHbuilds" className="hover:text-white transition-colors">Twitter</Link></li>
+              <li><Link href="https://linkedin.com/in/mohammed-shemim/" className="hover:text-white transition-colors">LinkedIn</Link></li>
             </ul>
           </div>
           

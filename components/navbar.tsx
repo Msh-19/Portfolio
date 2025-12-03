@@ -71,9 +71,13 @@ export function Navbar() {
               {link.name}
             </Link>
           ))}
-          <button className="bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-white/90 transition-colors">
-            Let's Talk
-          </button>
+          <a 
+            href="/resume.pdf" 
+            download
+            className="bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-white/90 transition-colors"
+          >
+            Resume
+          </a>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -103,9 +107,13 @@ export function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <button className="mt-4 bg-white text-black px-8 py-3 rounded-full text-lg font-semibold">
-                Let's Talk
-              </button>
+              <a 
+                href="/resume.pdf"
+                download
+                className="mt-4 bg-white text-black px-8 py-3 rounded-full text-lg font-semibold"
+              >
+                Resume
+              </a>
             </div>
           </motion.div>
         )}

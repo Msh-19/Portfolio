@@ -6,23 +6,17 @@ import Image from "next/image"
 
 const projects = [
   {
-    title: "Neon Finance",
-    category: "Fintech App",
-    image: "/neon-finance-app-interface-dark-mode.jpg",
-    color: "from-blue-500/20 to-cyan-500/20",
-  },
-  {
-    title: "Aura Health",
-    category: "Wellness Platform",
-    image: "/meditation-app-interface-soft-gradients.jpg",
-    color: "from-purple-500/20 to-pink-500/20",
-  },
-  {
-    title: "Orbit Space",
-    category: "Aerospace Website",
-    image: "/space-website-interface-futuristic.jpg",
-    color: "from-orange-500/20 to-red-500/20",
-  },
+  title: "InXtract",
+  category: "AI Document Summarizer",
+  image: "/inxtractLanding.png",
+  color: "from-purple-500/20 to-pink-500/20",
+},
+{
+  title: "BankDash",
+  category: "Banking Dashboard",
+  image: "/BankdashLanding.jpg",
+  color: "from-emerald-500/20 to-teal-500/20",
+},
 ]
 
 export function Work() {
@@ -49,17 +43,21 @@ export function Work() {
               transition={{ delay: 0.1 }}
               className="text-xl text-white/60 max-w-md"
             >
-              A showcase of my most recent digital transformations.
+              A showcase of my most recent projects.
             </motion.p>
           </div>
-          <motion.button
+          <motion.a
+            href="https://github.com/Msh-19"
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-sm font-medium"
+            
+            className="px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-sm font-medium inline-block"
           >
             View All Projects
-          </motion.button>
+          </motion.a>
         </div>
 
         <div className="space-y-20">
