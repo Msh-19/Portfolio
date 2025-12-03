@@ -6,9 +6,13 @@ import { cn } from "@/lib/utils"
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 export const metadata: Metadata = {
-  title: "Mohammed Shemim | Digital Agency",
+  title: "Mohammed Shemim",
   description: "Shaping the future of digital experiences.",
-    generator: 'v0.app'
+  generator: 'v0.app',
+  icons: {
+    icon: '/favicon.ico',
+    // apple: '/apple-icon.png',
+  }
 }
 
 export default function RootLayout({
