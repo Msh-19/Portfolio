@@ -15,7 +15,7 @@ const projects = [
 {
   title: "BankDash",
   category: "Banking Dashboard",
-  image: "/BankdashLanding.png",
+  image: "/BankDashLanding.png",
   color: "from-emerald-500/20 to-teal-500/20",
 },
 ]
