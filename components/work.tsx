@@ -10,11 +10,12 @@ const projects = [
   category: "AI Document Summarizer",
   image: "/inxtractLanding.png",
   color: "from-purple-500/20 to-pink-500/20",
+  // link: "inxtract.vercel.app",
 },
 {
   title: "BankDash",
   category: "Banking Dashboard",
-  image: "/BankdashLanding.jpg",
+  image: "/BankdashLanding.png",
   color: "from-emerald-500/20 to-teal-500/20",
 },
 ]
