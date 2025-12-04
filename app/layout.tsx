@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Inter } from 'next/font/google'
 import "./globals.css"
 import { cn } from "@/lib/utils"
+import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="en" data-jetski-tab-id="2114578642">
       <body className={cn("min-h-screen bg-black font-sans antialiased selection:bg-white/20")}>
         {children}
+        <Analytics />
       </body>
     </html>
   )
