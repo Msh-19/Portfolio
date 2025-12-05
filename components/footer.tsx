@@ -33,6 +33,7 @@ export function Footer() {
               <li><Link href="https://www.instagram.com/momemesh_19/" className="hover:text-white transition-colors">Instagram</Link></li>
               <li><Link href="https://x.com/MSHbuilds" className="hover:text-white transition-colors">Twitter</Link></li>
               <li><Link href="https://linkedin.com/in/mohammed-shemim/" className="hover:text-white transition-colors">LinkedIn</Link></li>
+              <li><Link href="https://leetcode.com/u/moshem3884/" className="hover:text-white transition-colors">LeetCode</Link></li>
             </ul>
           </div>
           

@@ -64,7 +64,7 @@ export function TechStack() {
   return (
     <section id="tech-stack" className="py-32 relative">
       <div className="container mx-auto px-6">
-        <div className="mb-20 text-center">
+        <div className="mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -78,7 +78,7 @@ export function TechStack() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-white/60 max-w-2xl mx-auto"
+            className="text-xl text-white/60 max-w-2xl"
           >
             Leveraging modern technologies to build scalable and performant solutions
           </motion.p>
@@ -87,7 +87,7 @@ export function TechStack() {
             whileInView={{ opacity: 1, width: "100px" }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mt-8"
+            className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-8"
           />
         </div>
 

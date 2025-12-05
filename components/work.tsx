@@ -46,6 +46,13 @@ export function Work() {
             >
               A showcase of my most recent projects.
             </motion.p>
+            <motion.div
+              initial={{ opacity: 0, width: 0 }}
+              whileInView={{ opacity: 1, width: "100px" }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-8"
+            />
           </div>
           <motion.a
             href="https://github.com/Msh-19"
