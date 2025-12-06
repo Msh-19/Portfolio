@@ -117,7 +117,7 @@ export function TechStack() {
                       transition={{ delay: index * 0.1 + techIndex * 0.05 }}
                       className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors group"
                     >
-                      <span className="text-2xl">{tech.icon}</span>
+                      <span className="text-2xl" role="img" aria-label={tech.name}>{tech.icon}</span>
                       <span className="text-white/80 group-hover:text-white transition-colors font-medium">
                         {tech.name}
                       </span>

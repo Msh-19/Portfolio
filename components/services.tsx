@@ -39,7 +39,7 @@ export function Services() {
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-bold mb-6"
           >
-            Field of Expersite
+            Field of Expertise
           </motion.h2>
           <motion.div
             initial={{ opacity: 0, width: 0 }}
