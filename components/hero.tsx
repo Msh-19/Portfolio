@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react"
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden overflow-x-hidden pt-32 pb-32">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden overflow-x-hidden pt-32 pb-32">
       {/* Background Liquid Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[80vw] sm:w-[50vw] h-[80vw] sm:h-[50vw] bg-blue-600/20 rounded-full blur-[120px] animate-blob mix-blend-screen" />

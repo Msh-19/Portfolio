@@ -34,7 +34,7 @@ export function Navbar() {
       <NavBody className="border border-white/10">
         {/* Logo */}
         <Link 
-          href="/" 
+          href="#hero" 
           className="relative z-20 flex items-center space-x-2 px-2 py-1 text-sm font-normal"
         >
           <span className="text-xl font-bold tracking-tighter text-white">
@@ -66,7 +66,7 @@ export function Navbar() {
         <MobileNavHeader>
           {/* Mobile Logo */}
           <Link 
-            href="/" 
+            href="#hero" 
             className="relative z-20 flex items-center space-x-2 px-2 py-1"
           >
             <span className="text-xl font-bold tracking-tighter text-white">
