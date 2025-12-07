@@ -3,6 +3,7 @@ import { Hero } from "@/components/hero"
 import { Services } from "@/components/services"
 import { Work } from "@/components/work"
 import { TechStack } from "@/components/tech-stack"
+import { Experience } from "@/components/experience"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <Services />
       <TechStack />
+      <Experience />
       <Work />
 
       {/* Call to Action Section */}
