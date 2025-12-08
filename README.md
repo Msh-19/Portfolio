@@ -1,30 +1,47 @@
-# Liquid Glass Digital agency website
+# Mohammed Shemim — Portfolio
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+Welcome to my portfolio. I’m a software developer focused on creating clean, efficient, and user-centered digital experiences. I enjoy working across the stack, solving problems, and turning ideas into functional and reliable applications.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/moish3884-7159s-projects/v0-liquid-glass-digital-agency-web)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/lB8PKz6wvCS)
+## 🚀 About Me
 
-## Overview
+I’m passionate about building products that are fast, intuitive, and enjoyable to use. I like exploring new technologies, improving how systems work, and delivering features that make a real difference for users.
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+I value clarity, collaboration, and continuous improvement — whether I’m designing interfaces, working on backend logic, or shipping complete features.
 
-## Deployment
+## 🛠️ Skills
 
-Your project is live at:
+- Web application development  
+- Frontend and backend implementation  
+- Real-time features and interactive UIs  
+- Working with databases and APIs  
+- Deployment, testing, and version control  
+- Problem-solving and system design  
 
-**[https://vercel.com/moish3884-7159s-projects/v0-liquid-glass-digital-agency-web](https://vercel.com/moish3884-7159s-projects/v0-liquid-glass-digital-agency-web)**
+I aim to write code that is maintainable, scalable, and easy for teams to build on.
 
-## Build your app
+---
 
-Continue building your app on:
+## 🔨 Projects
 
-**[https://v0.app/chat/lB8PKz6wvCS](https://v0.app/chat/lB8PKz6wvCS)**
+Here are some of the types of projects I work on:
 
-## How It Works
+- **Web applications** with modern interfaces  
+- **Tools and utilities** that help automate or simplify tasks  
+- **Real-time or interactive apps**  
+- **AI-assisted features** and content tools  
+- **Backend services and APIs**  
+- **Responsive and accessible UI improvements**
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+My portfolio includes a mix of personal projects, experiments, and real-world work built under tight timelines.
+
+---
+
+## 📫 Contact
+
+If you’d like to collaborate or discuss an opportunity, feel free to reach out.
+
+- **LinkedIn:** https://linkedin.com/in/mohammed-shemim/  
+- **GitHub:** https://github.com/Msh-19  
+- **Email:** hammoudi.yousuf@gmail.com
+
+Thanks for visiting!
