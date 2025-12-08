@@ -1,13 +1,19 @@
 "use client"
 
+import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 
 export function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden overflow-x-hidden pt-32 pb-32">
+      <div className="absolute inset-0 z-0">
+        <BackgroundRippleEffect rows={20} cols={40} />
+      </div>
+      
       {/* Background Liquid Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+
         <div className="absolute top-[-10%] left-[-10%] w-[80vw] sm:w-[50vw] h-[80vw] sm:h-[50vw] bg-blue-600/20 rounded-full blur-[120px] animate-blob mix-blend-screen" />
         <div className="absolute top-[20%] right-[-5%] sm:right-[-10%] w-[60vw] sm:w-[40vw] h-[60vw] sm:h-[40vw] bg-purple-600/20 rounded-full blur-[120px] animate-blob animation-delay-2000 mix-blend-screen" />
         <div className="absolute bottom-[-10%] left-[10%] sm:left-[20%] w-[70vw] sm:w-[45vw] h-[70vw] sm:h-[45vw] bg-indigo-600/20 rounded-full blur-[120px] animate-blob animation-delay-4000 mix-blend-screen" />
