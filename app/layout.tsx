@@ -7,13 +7,31 @@ import { Analytics } from '@vercel/analytics/react'
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 export const metadata: Metadata = {
-  title: "Mohammed Shemim",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://mohammedshemim.com'), // Fallback to assumed domain if env var not set, but best effort
+  title: {
+    default: "Mohammed Shemim",
+    template: "%s | Mohammed Shemim",
+  },
   description: "Shaping the future of digital experiences.",
   generator: 'v0.app',
   icons: {
     icon: '/favicon.ico',
     // apple: '/apple-icon.png',
-  }
+  },
+  openGraph: {
+    title: "Mohammed Shemim",
+    description: "Shaping the future of digital experiences.",
+    url: 'https://mohammedshemim.com',
+    siteName: 'Mohammed Shemim',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Mohammed Shemim",
+    description: "Shaping the future of digital experiences.",
+    creator: '@mohammedshemim', // Assuming handle, can be updated later
+  },
 }
 
 export default function RootLayout({
