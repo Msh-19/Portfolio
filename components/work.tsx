@@ -6,18 +6,40 @@ import Image from "next/image"
 
 const projects = [
   {
-  title: "InXtract",
-  category: "AI Document Summarizer",
-  image: "/inxtractLanding.png",
-  color: "from-purple-500/20 to-pink-500/20",
-  // link: "inxtract.vercel.app",
-},
-{
-  title: "BankDash",
-  category: "Banking Dashboard",
-  image: "/BankDashLanding.png",
-  color: "from-emerald-500/20 to-teal-500/20",
-},
+    title: "Triage it",
+    category: "AI Sentiment Analysis",
+    description: "Reading text and understanding the sentiment in them for teams to quickly assess the criticality of a complaint, and suggest proper responses.",
+    tags: ["AI", "Sentiment Analysis", "Team Productivity"],
+    link: "https://triage-it.vercel.app",
+    image: "/Triage_it.png",
+    color: "from-orange-500/20 to-red-500/20",
+  },
+  {
+    title: "ChatApp",
+    category: "Realtime Communication",
+    description: "A safe realtime socket based chat app that connects users through their google account. It also includes an ai chat feature.",
+    tags: ["Realtime", "Socket.io", "AI", "Google Auth"],
+    link: "https://chat-app-mvp.vercel.app",
+    image: "/ChatAPP.png",
+    color: "from-blue-500/20 to-cyan-500/20",
+  },
+  {
+    title: "InXtract",
+    category: "AI Document Summarizer",
+    description: "A summarizer of text from research papers. My role focused on integration and project management.",
+    tags: ["Integration", "Project Management"],
+    image: "/inxtractLanding.png",
+    link: "https://inxtract.vercel.app",
+    color: "from-purple-500/20 to-pink-500/20",
+  },
+  {
+    title: "BankDash",
+    category: "Banking Dashboard",
+    description: "A virtual credit card tracker and expense manager.",
+    tags: ["Frontend Implementation", "UI/UX"],
+    image: "/BankDashLanding.png",
+    color: "from-emerald-500/20 to-teal-500/20",
+  },
 ]
 
 export function Work() {
@@ -86,25 +108,61 @@ export function Work() {
                         {project.category}
                       </span>
                       <h3 className="text-4xl md:text-5xl font-bold mb-6 group-hover:translate-x-2 transition-transform duration-500">
-                        {project.title}
+                        {project.link ? (
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-blue-400 transition-colors"
+                          >
+                            {project.title}
+                          </a>
+                        ) : (
+                          project.title
+                        )}
                       </h3>
                       <p className="text-white/70 mb-8 max-w-md">
-                        Redefining the user experience through intuitive design and seamless interactions.
+                        {project.description}
                       </p>
-                      <div className="flex items-center gap-4 text-sm font-medium">
-                        <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10">UX/UI</span>
-                        <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10">Development</span>
+                      <div className="flex flex-wrap items-center gap-4 text-sm font-medium">
+                        {project.tags.map((tag, i) => (
+                          <span
+                            key={i}
+                            className="px-4 py-2 rounded-full bg-white/5 border border-white/10"
+                          >
+                            {tag}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   </div>
                   <div className="relative h-[400px] md:h-auto overflow-hidden">
-                    <Image
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+                    {project.link ? (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full h-full"
+                      >
+                         <Image
+                          src={project.image || "/placeholder.svg"}
+                          alt={project.title}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+                      </a>
+                    ) : ( 
+                      <>
+                        <Image
+                          src={project.image || "/placeholder.svg"}
+                          alt={project.title}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+                      </>
+                    )}
                   </div>
                 </div>
               </GlassCard>
