@@ -97,6 +97,8 @@ export function Hero() {
           </a>
           <a 
             href="https://t.me/MohammedShemim"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-4 glass rounded-full font-semibold text-lg text-white hover:bg-white/10 transition-all hover:scale-105 inline-block"
           >
             Contact Me

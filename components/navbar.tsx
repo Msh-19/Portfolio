@@ -52,6 +52,8 @@ export function Navbar() {
             variant="primary"
             className="bg-white text-black hover:bg-white/90 flex items-center gap-2"
             as="a"
+            target="_blank"
+            rel="noopener noreferrer"
             // @ts-ignore
             download
           >

@@ -30,11 +30,11 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-6">Socials</h4>
             <ul className="space-y-4 text-white/60">
-              <li><Link href="https://www.instagram.com/momemesh_19/" className="hover:text-white transition-colors">Instagram</Link></li>
-              <li><Link href="https://x.com/MSHbuilds" className="hover:text-white transition-colors">Twitter</Link></li>
-              <li><Link href="https://linkedin.com/in/mohammed-shemim/" className="hover:text-white transition-colors">LinkedIn</Link></li>
-              <li><Link href="https://leetcode.com/u/moshem3884/" className="hover:text-white transition-colors">LeetCode</Link></li>
-              <li><Link href="https://jami.bio/moshemim" className="hover:text-white transition-colors">Buy me a coffee</Link></li>
+              <li><Link href="https://www.instagram.com/momemesh_19/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</Link></li>
+              <li><Link href="https://x.com/MSHbuilds" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Twitter</Link></li>
+              <li><Link href="https://linkedin.com/in/mohammed-shemim/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</Link></li>
+              <li><Link href="https://leetcode.com/u/moshem3884/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LeetCode</Link></li>
+              <li><Link href="https://jami.bio/moshemim" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Buy me a coffee</Link></li>
             </ul>
           </div>
           
