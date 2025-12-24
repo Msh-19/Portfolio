@@ -9,6 +9,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@calcom/atoms": "^2.3.1",
+    "@calcom/embed-react": "^1.5.3",
     "@emotion/is-prop-valid": "latest",
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "1.2.2",
