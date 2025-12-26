@@ -47,7 +47,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
@@ -62,7 +62,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter mb-8 text-gradient"
+          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-5 text-gradient"
         >
           I build
           <br />
@@ -73,7 +73,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed"
+          className="text-base md:text-lg text-white/60 max-w-2xl mx-auto mb-6 leading-relaxed"
         >
           I turn complex ideas into clear, easy-to-use digital experiences, combining design and technology to build practical solutions
         </motion.p>
@@ -82,7 +82,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-32"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
         >
           <a 
             href="https://github.com/Msh-19"

@@ -33,18 +33,19 @@ export function ScheduleCard() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-4 right-4 z-50 animate-in fade-in slide-in-from-bottom-4 duration-500">
+    <div className="fixed bottom-2 right-2 sm:bottom-3 sm:right-3 md:bottom-4 md:right-4 z-50 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <Button
         as="div"
         borderRadius="1.5rem"
-        className="bg-black/40 backdrop-blur-xl text-white p-6 shadow-2xl border-white/5"
+        duration={6000}
+        className="bg-black/40 backdrop-blur-xl text-white p-4 sm:p-5 md:p-6 shadow-2xl border-white/5"
         containerClassName="h-auto w-auto p-[2px]"
         borderClassName="bg-[radial-gradient(#a855f7_40%,transparent_60%)]"
       >
         {/* Close Button wrapped in relative div to position correctly within the flex container if needed, 
             but Button's inner div is flex-center. We need to handle positioning. 
             The inner content should probably be a w-full h-full div. */}
-        <div className="relative w-full max-w-sm">
+        <div className="relative w-full max-w-[280px] sm:max-w-xs md:max-w-sm">
           <button
             onClick={() => setIsVisible(false)}
             className="absolute -top-2 -right-2 p-1 text-gray-400 hover:text-white transition-colors z-20"
@@ -53,19 +54,19 @@ export function ScheduleCard() {
             <X size={16} />
           </button>
 
-          <div className="flex flex-col gap-4">
-            <h3 className="text-lg font-bold flex items-center gap-2 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-purple-600">
+          <div className="flex flex-col gap-3 sm:gap-4">
+            <h3 className="text-base sm:text-lg font-bold flex items-center gap-2 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-purple-600">
               Let&apos;s Collaborate 🚀
             </h3>
             
-            <p className="text-sm text-gray-300 leading-relaxed text-left">
+            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed text-left">
               Let&apos;s discuss your project and how my expertise can help bring your vision to life.
             </p>
 
-            <div className="flex gap-3 justify-end pt-2">
+            <div className="flex gap-2 sm:gap-3 justify-end pt-1 sm:pt-2">
               <button
                 onClick={handleSchedule}
-                className="px-4 py-2 text-sm font-bold bg-white text-black rounded-md hover:bg-gray-300 hover:scale-105 active:scale-95 transition-all duration-200 shadow-lg"
+                className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-bold bg-white text-black rounded-md hover:bg-gray-300 hover:scale-105 active:scale-95 transition-all duration-200 shadow-lg"
               >
                 Schedule
               </button>
