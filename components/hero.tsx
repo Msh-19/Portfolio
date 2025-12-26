@@ -114,8 +114,13 @@ export function Hero() {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
       >
         <span className="text-xs text-white/40 uppercase tracking-widest">Scroll</span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-white/0 via-white/40 to-white/0" />
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-white/60 rounded-full flex items-start justify-center p-2">
+          <div className="w-1.5 h-3 bg-white/60 rounded-full" />
+        </div>
+      </div>
       </motion.div>
+      
     </section>
   )
 }
