@@ -82,7 +82,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-24 sm:mb-0"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-32"
         >
           <a 
             href="https://github.com/Msh-19"
