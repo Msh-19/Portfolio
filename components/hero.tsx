@@ -4,6 +4,7 @@ import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { useEffect, useState } from "react"
+import { FlipWords } from "@/components/ui/flip-words"
 
 export function Hero() {
   const [dimensions, setDimensions] = useState({ rows: 20, cols: 40 }); // Default initial size
@@ -66,7 +67,7 @@ export function Hero() {
         >
           I build
           <br />
-          Software
+          <FlipWords words={["Software", "Solutions", "Systems", "Experiences", "Products"]} />
         </motion.h1>
 
         <motion.p
