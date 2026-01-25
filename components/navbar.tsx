@@ -37,8 +37,8 @@ export function Navbar() {
           href="#hero" 
           className="relative z-20 flex items-center space-x-2 px-2 py-1 text-sm font-normal"
         >
-          <span className="text-xl font-bold tracking-tighter text-white">
-            Mohammed Shemim<span className="text-blue-400">.</span>
+          <span className="text-xl font-bold tracking-tighter text-foreground">
+            Mohammed Shemim<span className="text-primary">.</span>
           </span>
         </Link>
 
@@ -50,7 +50,7 @@ export function Navbar() {
           <NavbarButton
             href="/resume.pdf"
             variant="primary"
-            className="bg-white text-black hover:bg-white/90 flex items-center gap-2"
+            className="bg-primary text-black hover:bg-primary/90 flex items-center gap-2"
             as="a"
             target="_blank"
             rel="noopener noreferrer"
@@ -71,8 +71,8 @@ export function Navbar() {
             href="#hero" 
             className="relative z-20 flex items-center space-x-2 px-2 py-1"
           >
-            <span className="text-xl font-bold tracking-tighter text-white">
-              Mohammed Shemim<span className="text-blue-400">.</span>
+            <span className="text-xl font-bold tracking-tighter text-foreground">
+              Mohammed Shemim<span className="text-primary">.</span>
             </span>
           </Link>
 
@@ -87,7 +87,7 @@ export function Navbar() {
               key={`mobile-link-${idx}`}
               href={item.link}
               onClick={handleItemClick}
-              className="text-2xl font-light text-white hover:text-blue-400 transition-colors"
+              className="text-2xl font-light text-foreground hover:text-primary transition-colors"
             >
               {item.name}
             </a>
@@ -95,7 +95,7 @@ export function Navbar() {
           <a
             href="/resume.pdf"
             download
-            className="mt-4 bg-white text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-white/90 transition-colors flex items-center gap-2 justify-center"
+            className="mt-4 bg-primary text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-primary/90 transition-colors flex items-center gap-2 justify-center"
           >
             <Download className="w-5 h-5" />
             Resume

@@ -103,25 +103,25 @@ html {
 }
 
 :root {
-  --background: 0 0% 0%;
-  --foreground: 0 0% 100%;
-  --card: 0 0% 3%;
-  --card-foreground: 0 0% 100%;
-  --popover: 0 0% 3%;
-  --popover-foreground: 0 0% 100%;
-  --primary: 0 0% 98%;
-  --primary-foreground: 0 0% 9%;
-  --secondary: 0 0% 14.9%;
-  --secondary-foreground: 0 0% 98%;
-  --muted: 0 0% 14.9%;
-  --muted-foreground: 0 0% 63.9%;
-  --accent: 0 0% 14.9%;
-  --accent-foreground: 0 0% 98%;
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 0 0% 14.9%;
-  --input: 0 0% 14.9%;
-  --ring: 0 0% 83.1%;
+  --background: hsl(0 0% 0%);
+  --foreground: hsl(0 0% 100%);
+  --card: hsl(0 0% 3%);
+  --card-foreground: hsl(0 0% 100%);
+  --popover: hsl(0 0% 3%);
+  --popover-foreground: hsl(0 0% 100%);
+  --primary: hsl(37 100% 50%);
+  --primary-foreground: hsl(0 0% 0%);
+  --secondary: hsl(29 45% 33%);
+  --secondary-foreground: hsl(0 0% 98%);
+  --muted: hsl(29 45% 33%);
+  --muted-foreground: hsl(40 100% 72%);
+  --accent: hsl(35 73% 41%);
+  --accent-foreground: hsl(0 0% 98%);
+  --destructive: hsl(0 62.8% 30.6%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(29 45% 33%);
+  --input: hsl(29 45% 33%);
+  --ring: hsl(37 100% 50%);
   --radius: 0.5rem;
 }
 
@@ -137,7 +137,8 @@ html {
 
 @layer utilities {
   .glass {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)];
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
   }
 
   .glass-hover {
@@ -145,6 +146,6 @@ html {
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-white/80 to-white/50;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-muted-foreground to-primary;
   }
 }

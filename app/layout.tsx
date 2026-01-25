@@ -99,7 +99,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#000000" />
         <StructuredData />
       </head>
-      <body className={cn("min-h-screen bg-black font-sans antialiased selection:bg-white/20")}>
+      <body className={cn("min-h-screen bg-background font-sans antialiased selection:bg-primary/20")}>
         {children}
         <ScheduleCard />
         <Analytics />

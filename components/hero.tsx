@@ -37,9 +37,9 @@ export function Hero() {
       {/* Background Liquid Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
 
-        <div className="absolute top-[-10%] left-[-10%] w-[80vw] sm:w-[50vw] h-[80vw] sm:h-[50vw] bg-blue-600/20 rounded-full blur-[120px] animate-blob mix-blend-screen" />
-        <div className="absolute top-[20%] right-[-5%] sm:right-[-10%] w-[60vw] sm:w-[40vw] h-[60vw] sm:h-[40vw] bg-purple-600/20 rounded-full blur-[120px] animate-blob animation-delay-2000 mix-blend-screen" />
-        <div className="absolute bottom-[-10%] left-[10%] sm:left-[20%] w-[70vw] sm:w-[45vw] h-[70vw] sm:h-[45vw] bg-indigo-600/20 rounded-full blur-[120px] animate-blob animation-delay-4000 mix-blend-screen" />
+        <div className="absolute top-[-10%] left-[-10%] w-[80vw] sm:w-[50vw] h-[80vw] sm:h-[50vw] bg-primary/20 rounded-full blur-[120px] animate-blob mix-blend-screen" />
+        <div className="absolute top-[20%] right-[-5%] sm:right-[-10%] w-[60vw] sm:w-[40vw] h-[60vw] sm:h-[40vw] bg-accent/20 rounded-full blur-[120px] animate-blob animation-delay-2000 mix-blend-screen" />
+        <div className="absolute bottom-[-10%] left-[10%] sm:left-[20%] w-[70vw] sm:w-[45vw] h-[70vw] sm:h-[45vw] bg-secondary/20 rounded-full blur-[120px] animate-blob animation-delay-4000 mix-blend-screen" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 text-center">
@@ -50,10 +50,10 @@ export function Hero() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary/75 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            <span className="text-xs font-medium text-white/80 uppercase tracking-wider">
+            <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
               Available for new projects
             </span>
           </div>
@@ -63,7 +63,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-5 text-gradient"
+          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-5"
         >
           I build
           <br />
@@ -74,7 +74,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="text-base md:text-lg text-white/60 max-w-2xl mx-auto mb-6 leading-relaxed"
+          className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6 leading-relaxed"
         >
           I turn complex ideas into clear, easy-to-use digital experiences, combining design and technology to build practical solutions
         </motion.p>
@@ -89,18 +89,18 @@ export function Hero() {
             href="https://github.com/Msh-19"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative px-8 py-4 bg-white text-black rounded-full font-semibold text-lg overflow-hidden transition-all hover:scale-105 inline-block"
+            className="group relative px-8 py-4 bg-primary text-black rounded-full font-semibold text-lg overflow-hidden transition-all hover:scale-105 inline-block"
           >
             <span className="relative z-10 flex items-center gap-2">
               View My Work <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-white opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity" />
           </a>
           <a 
             href="https://t.me/MohammedShemim"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-4 glass rounded-full font-semibold text-lg text-white hover:bg-white/10 transition-all hover:scale-105 inline-block"
+            className="px-8 py-4 glass rounded-full font-semibold text-lg text-foreground hover:bg-white/10 transition-all hover:scale-105 inline-block"
           >
             Contact Me
           </a>

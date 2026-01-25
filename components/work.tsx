@@ -50,7 +50,7 @@ export function Work() {
   return (
     <section id="work" className="py-32 relative overflow-hidden">
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-blue-900/10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-primary/10 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
@@ -68,7 +68,7 @@ export function Work() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl text-white/60 max-w-md"
+              className="text-xl text-muted-foreground max-w-md"
             >
               A showcase of my most recent projects.
             </motion.p>
@@ -77,7 +77,7 @@ export function Work() {
               whileInView={{ opacity: 1, width: "100px" }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-8"
+              className="h-1 bg-gradient-to-r from-primary to-accent rounded-full mt-8"
             />
           </div>
           <motion.a
