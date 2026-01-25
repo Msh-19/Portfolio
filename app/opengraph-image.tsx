@@ -28,11 +28,11 @@ export default async function Image() {
         <div
             style={{
                 display: 'flex',
-                background: 'linear-gradient(to bottom right, #4F46E5, #9333EA)',
+                background: 'linear-gradient(to bottom right, #FF9D00, #B6771D)',
                 width: '100%',
                 height: '100%',
                 position: 'absolute',
-                opacity: 0.2,
+                opacity: 0.15,
             }}
         />
         <div
@@ -43,6 +43,7 @@ export default async function Image() {
             marginBottom: 20,
             zIndex: 10,
             textAlign: 'center',
+            textShadow: '0 0 40px rgba(255, 157, 0, 0.3)',
           }}
         >
           Mohammed Shemim
@@ -50,9 +51,10 @@ export default async function Image() {
         <div
           style={{
             fontSize: 40,
-            color: '#A3A3A3',
+            color: '#FFCF71',
             zIndex: 10,
             textAlign: 'center',
+            letterSpacing: '-0.02em',
           }}
         >
             Shaping the future of digital experiences.
