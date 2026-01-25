@@ -7,22 +7,22 @@ import Link from "next/link"
 
 const services = [
   {
-    icon: <Palette className="w-8 h-8 text-blue-400" />,
+    icon: <Palette className="w-8 h-8 text-primary" />,
     title: "Brand Identity",
     description: "Crafting visual systems that speak louder than words. I build brands that resonate and endure.",
   },
   {
-    icon: <Smartphone className="w-8 h-8 text-purple-400" />,
+    icon: <Smartphone className="w-8 h-8 text-accent" />,
     title: "Digital Product",
     description: "User-centric interfaces designed for clarity and delight. From mobile apps to complex dashboards.",
   },
   {
-    icon: <Code2 className="w-8 h-8 text-indigo-400" />,
+    icon: <Code2 className="w-8 h-8 text-secondary" />,
     title: "Development",
     description: "Clean, scalable code that powers your vision. I build robust solutions using cutting-edge tech.",
   },
   {
-    icon: <Rocket className="w-8 h-8 text-pink-400" />,
+    icon: <Rocket className="w-8 h-8 text-muted-foreground" />,
     title: "Growth Strategy",
     description: "Data-driven insights to scale your digital presence. I help you reach and engage your audience.",
   },
@@ -45,7 +45,7 @@ export function Services() {
             initial={{ opacity: 0, width: 0 }}
             whileInView={{ opacity: 1, width: "100px" }}
             viewport={{ once: true }}
-            className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
+            className="h-1 bg-gradient-to-r from-primary to-accent rounded-full"
           />
         </div>
 

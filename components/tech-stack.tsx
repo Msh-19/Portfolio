@@ -6,8 +6,8 @@ import { motion } from "framer-motion"
 const techStack = [
   {
     category: "Frameworks/Libraries",
-    color: "from-blue-500 to-cyan-500",
-    iconColor: "text-blue-400",
+    color: "from-primary to-accent",
+    iconColor: "text-primary",
     technologies: [
       { name: "Express", icon: "⚡" },
       { name: "Gin", icon: "🍸" },
@@ -17,8 +17,8 @@ const techStack = [
   },
   {
     category: "Programming Languages",
-    color: "from-purple-500 to-pink-500",
-    iconColor: "text-purple-400",
+    color: "from-accent to-secondary",
+    iconColor: "text-accent",
     technologies: [
       { name: "C/C++", icon: "🔷" },
       { name: "GO", icon: "🐹" },
@@ -30,8 +30,8 @@ const techStack = [
   },
   {
     category: "Tools",
-    color: "from-indigo-500 to-blue-500",
-    iconColor: "text-indigo-400",
+    color: "from-secondary to-muted-foreground",
+    iconColor: "text-secondary",
     technologies: [
       { name: "Azure", icon: "☁" },
       { name: "AWS", icon: "🔶" },
@@ -41,8 +41,8 @@ const techStack = [
   },
   {
     category: "Testing",
-    color: "from-green-500 to-emerald-500",
-    iconColor: "text-green-400",
+    color: "from-muted-foreground to-primary",
+    iconColor: "text-muted-foreground",
     technologies: [
       { name: "Cypress", icon: "🌲" },
       { name: "Jest", icon: "🃏" },
@@ -50,8 +50,8 @@ const techStack = [
   },
   {
     category: "Database",
-    color: "from-orange-500 to-red-500",
-    iconColor: "text-orange-400",
+    color: "from-primary to-accent",
+    iconColor: "text-primary",
     technologies: [
       { name: "MySQL", icon: "🐬" },
       { name: "MongoDB", icon: "🍃" },
@@ -73,21 +73,12 @@ export function TechStack() {
           >
             Tech Stack
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-xl text-white/60 max-w-2xl"
-          >
-            Leveraging modern technologies to build scalable and performant solutions
-          </motion.p>
           <motion.div
             initial={{ opacity: 0, width: 0 }}
             whileInView={{ opacity: 1, width: "100px" }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-8"
+            className="h-1 bg-gradient-to-r from-primary to-accent rounded-full mt-8"
           />
         </div>
 
@@ -131,7 +122,7 @@ export function TechStack() {
       </div>
 
       {/* Background gradient decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
     </section>
   )
 }

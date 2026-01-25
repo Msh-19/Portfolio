@@ -40,7 +40,7 @@ export function ScheduleCard() {
         duration={6000}
         className="bg-black/40 backdrop-blur-xl text-white p-4 sm:p-5 md:p-6 shadow-2xl border-white/5"
         containerClassName="h-auto w-auto p-[2px]"
-        borderClassName="bg-[radial-gradient(#a855f7_40%,transparent_60%)]"
+        borderClassName="bg-[radial-gradient(#FF9D00_40%,transparent_60%)]"
       >
         {/* Close Button wrapped in relative div to position correctly within the flex container if needed, 
             but Button's inner div is flex-center. We need to handle positioning. 
@@ -48,25 +48,25 @@ export function ScheduleCard() {
         <div className="relative w-full max-w-[280px] sm:max-w-xs md:max-w-sm">
           <button
             onClick={() => setIsVisible(false)}
-            className="absolute -top-2 -right-2 p-1 text-gray-400 hover:text-white transition-colors z-20"
+            className="absolute -top-2 -right-2 p-1 text-muted-foreground hover:text-foreground transition-colors z-20"
             aria-label="Close"
           >
             <X size={16} />
           </button>
 
           <div className="flex flex-col gap-3 sm:gap-4">
-            <h3 className="text-base sm:text-lg font-bold flex items-center gap-2 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-purple-600">
+            <h3 className="text-base sm:text-lg font-bold flex items-center gap-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
               Let&apos;s Collaborate 🚀
             </h3>
             
-            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed text-left">
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed text-left">
               Let&apos;s discuss your project and how my expertise can help bring your vision to life.
             </p>
 
             <div className="flex gap-2 sm:gap-3 justify-end pt-1 sm:pt-2">
               <button
                 onClick={handleSchedule}
-                className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-bold bg-white text-black rounded-md hover:bg-gray-300 hover:scale-105 active:scale-95 transition-all duration-200 shadow-lg"
+                className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-bold bg-primary text-black rounded-md hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all duration-200 shadow-lg"
               >
                 Schedule
               </button>
