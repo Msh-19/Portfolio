@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     description: "Software engineer specializing in full-stack development, AI integration, and building scalable digital experiences. Expertise in React, Next.js, Node.js, Python, Go, and cloud technologies.",
     images: [
       {
-        url: '/opengraph-image',
+        url: '/Portfolio.png',
         width: 1200,
         height: 630,
         alt: 'Mohammed Shemim Portfolio',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     title: "Mohammed Shemim - Software Engineer",
     description: "Software engineer specializing in full-stack development, AI integration, and building scalable digital experiences.",
     creator: '@mohammedshemim',
-    images: ['/opengraph-image'],
+    images: ['/Portfolio.png'],
   },
   robots: {
     index: true,
