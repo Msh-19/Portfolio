@@ -8,21 +8,25 @@ import Link from "next/link"
 const services = [
   {
     icon: <Palette className="w-8 h-8 text-primary" />,
+    iconBg: "bg-primary/15",
     title: "Brand Identity",
     description: "Crafting visual systems that speak louder than words. I build brands that resonate and endure.",
   },
   {
-    icon: <Smartphone className="w-8 h-8 text-accent" />,
+    icon: <Smartphone className="w-8 h-8 text-primary" />,
+    iconBg: "bg-primary/15",
     title: "Digital Product",
     description: "User-centric interfaces designed for clarity and delight. From mobile apps to complex dashboards.",
   },
   {
-    icon: <Code2 className="w-8 h-8 text-secondary" />,
+    icon: <Code2 className="w-8 h-8 text-primary" />,
+    iconBg: "bg-primary/15",
     title: "Development",
     description: "Clean, scalable code that powers your vision. I build robust solutions using cutting-edge tech.",
   },
   {
-    icon: <Rocket className="w-8 h-8 text-muted-foreground" />,
+    icon: <Rocket className="w-8 h-8 text-primary" />,
+    iconBg: "bg-primary/15",
     title: "Growth Strategy",
     description: "Data-driven insights to scale your digital presence. I help you reach and engage your audience.",
   },
@@ -60,7 +64,7 @@ export function Services() {
             >
               <GlassCard className="h-full flex flex-col justify-between group">
                 <div>
-                  <div className="mb-6 p-4 rounded-2xl bg-white/5 w-fit group-hover:bg-white/10 transition-colors">
+                  <div className={`mb-6 p-4 rounded-2xl ${service.iconBg} w-fit group-hover:bg-primary/25 transition-colors`}>
                     {service.icon}
                   </div>
                   <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>

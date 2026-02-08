@@ -12,9 +12,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Services />
+      <Work />
       <TechStack />
       <Experience />
-      <Work />
 
       {/* Call to Action Section */}
       <section id="contact" className="py-32 relative">
@@ -26,7 +26,7 @@ export default function Home() {
           <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
             Let's collaborate to build something extraordinary. Your vision, my expertise.
           </p>
-          <a 
+          <a
             href="https://t.me/MohammedShemim"
             className="inline-block px-10 py-5 bg-primary text-black rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-[0_0_40px_-10px_rgba(255,157,0,0.3)]"
           >

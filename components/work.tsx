@@ -87,7 +87,7 @@ export function Work() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            
+
             className="px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-sm font-medium inline-block"
           >
             View All Projects
@@ -140,7 +140,7 @@ export function Work() {
                       </div>
                     </div>
                   </div>
-                  <div className="relative h-[400px] md:h-auto overflow-hidden">
+                  <div className="relative min-h-[500px] overflow-hidden">
                     {project.link ? (
                       <a
                         href={project.link}
@@ -148,15 +148,15 @@ export function Work() {
                         rel="noopener noreferrer"
                         className="block w-full h-full"
                       >
-                         <Image
+                        <Image
                           src={project.image || "/placeholder.svg"}
                           alt={project.imageAlt || project.title}
                           fill
                           className="object-cover transition-transform duration-700 group-hover:scale-110"
                         />
-                         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+                        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
                       </a>
-                    ) : ( 
+                    ) : (
                       <>
                         <Image
                           src={project.image || "/placeholder.svg"}

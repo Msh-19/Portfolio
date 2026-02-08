@@ -19,8 +19,8 @@ export function Navbar() {
 
   const navItems = [
     { name: "Services", link: "#services" },
-    { name: "Experience", link: "#experience" },
     { name: "Work", link: "#work" },
+    { name: "Experience", link: "#experience" },
     { name: "Contact", link: "#contact" },
   ]
 
@@ -33,8 +33,8 @@ export function Navbar() {
       {/* Desktop Navigation */}
       <NavBody className="border border-white/10">
         {/* Logo */}
-        <Link 
-          href="#hero" 
+        <Link
+          href="#hero"
           className="relative z-20 flex items-center space-x-2 px-2 py-1 text-sm font-normal"
         >
           <span className="text-xl font-bold tracking-tighter text-foreground">
@@ -67,8 +67,8 @@ export function Navbar() {
       <MobileNav className="border border-white/10">
         <MobileNavHeader>
           {/* Mobile Logo */}
-          <Link 
-            href="#hero" 
+          <Link
+            href="#hero"
             className="relative z-20 flex items-center space-x-2 px-2 py-1"
           >
             <span className="text-xl font-bold tracking-tighter text-foreground">

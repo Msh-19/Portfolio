@@ -15,10 +15,10 @@ export function Hero() {
       const cellSize = 56; // Matching the default in BackgroundRippleEffect
       const cols = Math.ceil(window.innerWidth / cellSize);
       const rows = Math.ceil(window.innerHeight / cellSize); // Use actual window height or section height
-      
-      setDimensions({ 
-        rows: Math.max(20, rows), 
-        cols: Math.max(40, cols) 
+
+      setDimensions({
+        rows: Math.max(20, rows),
+        cols: Math.max(40, cols)
       });
     };
 
@@ -33,7 +33,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         <BackgroundRippleEffect rows={dimensions.rows} cols={dimensions.cols} />
       </div>
-      
+
       {/* Background Liquid Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
 
@@ -85,10 +85,8 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
         >
-          <a 
-            href="https://github.com/Msh-19"
-            target="_blank"
-            rel="noopener noreferrer"
+          <a
+            href="#work"
             className="group relative px-8 py-4 bg-primary text-black rounded-full font-semibold text-lg overflow-hidden transition-all hover:scale-105 inline-block"
           >
             <span className="relative z-10 flex items-center gap-2">
@@ -96,7 +94,7 @@ export function Hero() {
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity" />
           </a>
-          <a 
+          <a
             href="https://t.me/MohammedShemim"
             target="_blank"
             rel="noopener noreferrer"
@@ -116,12 +114,12 @@ export function Hero() {
       >
         <span className="text-xs text-white/40 uppercase tracking-widest">Scroll</span>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/60 rounded-full flex items-start justify-center p-2">
-          <div className="w-1.5 h-3 bg-white/60 rounded-full" />
+          <div className="w-6 h-10 border-2 border-white/60 rounded-full flex items-start justify-center p-2">
+            <div className="w-1.5 h-3 bg-white/60 rounded-full" />
+          </div>
         </div>
-      </div>
       </motion.div>
-      
+
     </section>
   )
 }

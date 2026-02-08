@@ -6,8 +6,6 @@ import { motion } from "framer-motion"
 const techStack = [
   {
     category: "Frameworks/Libraries",
-    color: "from-primary to-accent",
-    iconColor: "text-primary",
     technologies: [
       { name: "Express", icon: "⚡" },
       { name: "Gin", icon: "🍸" },
@@ -17,8 +15,6 @@ const techStack = [
   },
   {
     category: "Programming Languages",
-    color: "from-accent to-secondary",
-    iconColor: "text-accent",
     technologies: [
       { name: "C/C++", icon: "🔷" },
       { name: "GO", icon: "🐹" },
@@ -30,8 +26,6 @@ const techStack = [
   },
   {
     category: "Tools",
-    color: "from-secondary to-muted-foreground",
-    iconColor: "text-secondary",
     technologies: [
       { name: "Azure", icon: "☁" },
       { name: "AWS", icon: "🔶" },
@@ -41,8 +35,6 @@ const techStack = [
   },
   {
     category: "Testing",
-    color: "from-muted-foreground to-primary",
-    iconColor: "text-muted-foreground",
     technologies: [
       { name: "Cypress", icon: "🌲" },
       { name: "Jest", icon: "🃏" },
@@ -50,8 +42,6 @@ const techStack = [
   },
   {
     category: "Database",
-    color: "from-primary to-accent",
-    iconColor: "text-primary",
     technologies: [
       { name: "MySQL", icon: "🐬" },
       { name: "MongoDB", icon: "🍃" },
@@ -93,8 +83,8 @@ export function TechStack() {
             >
               <GlassCard className="h-full">
                 <div className="mb-6 font-normal">
-                  <div className={`inline-block px-4 py-2 rounded-full bg-gradient-to-r ${stack.color} bg-opacity-10`}>
-                    <h3 className={`text-lg text-white font-light ${stack.iconColor}`}>{stack.category}</h3>
+                  <div className="inline-block px-4 py-2 rounded-full bg-primary/15">
+                    <h3 className="text-lg text-primary font-light">{stack.category}</h3>
                   </div>
                 </div>
 
@@ -106,7 +96,7 @@ export function TechStack() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 + techIndex * 0.05 }}
-                      className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors group"
+                      className="flex items-center gap-3 p-3 rounded-xl bg-primary/10 hover:bg-primary/20 transition-colors group"
                     >
                       <span className="text-2xl" role="img" aria-label={tech.name}>{tech.icon}</span>
                       <span className="text-white/80 group-hover:text-white transition-colors font-medium">

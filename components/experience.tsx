@@ -15,7 +15,7 @@ const experienceData = [
             Icog labs • Addis Ababa, Ethiopia
           </p>
         </div>
-        <ul className="space-y-3 text-muted-foreground text-base md:text-lg">
+        <ul className="space-y-3 text-white text-base md:text-lg">
           <li className="flex gap-3">
             <span className="text-primary mt-1.5 flex-shrink-0">•</span>
             <span>
@@ -50,7 +50,7 @@ const experienceData = [
             Evergreen Technologies • Addis Ababa, Ethiopia
           </p>
         </div>
-        <ul className="space-y-3 text-muted-foreground text-base md:text-lg">
+        <ul className="space-y-3 text-white text-base md:text-lg">
           <li className="flex gap-3">
             <span className="text-accent mt-1.5 flex-shrink-0">•</span>
             <span>
@@ -79,7 +79,7 @@ const experienceData = [
             Eskalate LLC • Addis Ababa, Ethiopia
           </p>
         </div>
-        <ul className="space-y-3 text-muted-foreground text-base md:text-lg">
+        <ul className="space-y-3 text-white text-base md:text-lg">
           <li className="flex gap-3">
             <span className="text-primary mt-1.5 flex-shrink-0">•</span>
             <span>
@@ -120,7 +120,7 @@ export function Experience() {
           </h2>
           <div className="h-1 bg-gradient-to-r from-primary to-accent rounded-full w-[100px]" />
         </div>
-        
+
         <Timeline data={experienceData} />
       </div>
     </section>
