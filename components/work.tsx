@@ -6,16 +6,6 @@ import Image from "next/image"
 
 const projects = [
   {
-    title: "Triage it",
-    category: "AI Sentiment Analysis",
-    description: "Reading text and understanding the sentiment in them for teams to quickly assess the criticality of a complaint, and suggest proper responses.",
-    tags: ["AI", "Sentiment Analysis", "Team Productivity"],
-    link: "https://triage-it.vercel.app",
-    image: "/Triage_it.png",
-    imageAlt: "Triage it - AI Sentiment Analysis dashboard showing customer complaint analysis and sentiment detection interface",
-    color: "from-orange-500/20 to-red-500/20",
-  },
-  {
     title: "ChatApp",
     category: "Realtime Communication",
     description: "A safe realtime socket based chat app that connects users through their google account. It also includes an ai chat feature.",
@@ -34,6 +24,16 @@ const projects = [
     imageAlt: "InXtract - AI-powered research paper summarization tool landing page showing document upload and summary generation",
     link: "https://inxtract.vercel.app",
     color: "from-purple-500/20 to-pink-500/20",
+  },
+  {
+    title: "Triage it",
+    category: "AI Sentiment Analysis",
+    description: "Reading text and understanding the sentiment in them for teams to quickly assess the criticality of a complaint, and suggest proper responses.",
+    tags: ["AI", "Sentiment Analysis", "Team Productivity"],
+    link: "https://triage-it.vercel.app",
+    image: "/Triage_it.png",
+    imageAlt: "Triage it - AI Sentiment Analysis dashboard showing customer complaint analysis and sentiment detection interface",
+    color: "from-orange-500/20 to-red-500/20",
   },
   {
     title: "BankDash",
