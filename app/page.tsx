@@ -5,6 +5,7 @@ import { Work } from "@/components/work"
 import { TechStack } from "@/components/tech-stack"
 import { Experience } from "@/components/experience"
 import { Footer } from "@/components/footer"
+import { ContactForm } from "@/components/contact-form"
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
       <TechStack />
       <Experience />
 
-      {/* Call to Action Section */}
+      {/* Contact Form Section */}
       <section id="contact" className="py-32 relative">
         <div className="container mx-auto px-6 text-center relative z-10">
           <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight">
@@ -24,14 +25,9 @@ export default function Home() {
             <span className="text-gradient">the future?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Let's collaborate to build something extraordinary. Your vision, my expertise.
+            Let&apos;s collaborate to build something extraordinary. Your vision, my expertise.
           </p>
-          <a
-            href="https://t.me/MohammedShemim"
-            className="inline-block px-10 py-5 bg-primary text-black rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-[0_0_40px_-10px_rgba(255,157,0,0.3)]"
-          >
-            Start a Project
-          </a>
+          <ContactForm />
         </div>
 
         {/* Background Gradient for CTA */}

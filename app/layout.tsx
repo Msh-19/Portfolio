@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils"
 import { Analytics } from '@vercel/analytics/react'
 import { ScheduleCard } from "@/components/schedule-card"
 import { StructuredData } from "@/components/structured-data"
+import { Toaster } from "sonner"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -102,6 +103,16 @@ export default function RootLayout({
       <body className={cn("min-h-screen bg-background font-sans antialiased selection:bg-primary/20")}>
         {children}
         <ScheduleCard />
+        <Toaster
+          position="bottom-right"
+          toastOptions={{
+            style: {
+              background: "hsl(0 0% 8%)",
+              border: "1px solid hsl(0 0% 15%)",
+              color: "hsl(0 0% 100%)",
+            },
+          }}
+        />
         <Analytics />
       </body>
     </html>
