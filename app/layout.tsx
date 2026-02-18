@@ -10,7 +10,7 @@ import { Toaster } from "sonner"
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://mohammedshemim.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://moshemim.dev'),
   title: {
     default: "Mohammed Shemim - Software Engineer | Full-Stack Developer",
     template: "%s | Mohammed Shemim",
@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   description: "Software engineer specializing in full-stack development, AI integration, and building scalable digital experiences. Expertise in React, Next.js, Node.js, Python, Go, and cloud technologies.",
   keywords: [
     "Mohammed Shemim",
+    "Ethiopia",
+    "Data Structures and Algorithms",
     "Software Engineer",
     "Full-Stack Developer",
     "Web Developer",
@@ -44,14 +46,22 @@ export const metadata: Metadata = {
     telephone: false,
   },
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-icon.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
-  manifest: '/manifest.json',
+  manifest: '/site.webmanifest',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://mohammedshemim.com',
+    url: 'https://moshemim.dev',
     siteName: 'Mohammed Shemim Portfolio',
     title: "Mohammed Shemim - Software Engineer | Full-Stack Developer",
     description: "Software engineer specializing in full-stack development, AI integration, and building scalable digital experiences. Expertise in React, Next.js, Node.js, Python, Go, and cloud technologies.",
