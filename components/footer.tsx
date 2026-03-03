@@ -34,7 +34,7 @@ export function Footer() {
               <li><Link href="https://x.com/MSHbuilds" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Twitter</Link></li>
               <li><Link href="https://linkedin.com/in/mohammed-shemim/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</Link></li>
               <li><Link href="https://leetcode.com/u/moshem3884/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LeetCode</Link></li>
-              <li><Link href="https://jami.bio/moshemim" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Buy me a coffee</Link></li>
+              <li><Link href="https://jami.bio/Moshemim" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Buy me a coffee</Link></li>
             </ul>
           </div>
           
