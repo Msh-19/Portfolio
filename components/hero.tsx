@@ -67,7 +67,7 @@ export function Hero() {
         >
           I build
           <br />
-          <FlipWords words={["Software", "Solutions", "Systems", "Experiences", "Products"]} />
+          <span className="text-primary">Software</span>
         </motion.h1>
 
         <motion.p
@@ -76,7 +76,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6 leading-relaxed"
         >
-          I turn complex ideas into clear, easy-to-use digital experiences, combining design and technology to build practical solutions
+          I am a full-stack developer based in Ethiopia focused on building practical web platforms and internal tools that solve real operational problems.
         </motion.p>
 
         <motion.div
