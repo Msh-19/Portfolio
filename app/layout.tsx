@@ -6,18 +6,19 @@ import { Analytics } from '@vercel/analytics/react'
 import { ScheduleCard } from "@/components/schedule-card"
 import { StructuredData } from "@/components/structured-data"
 import { Toaster } from "sonner"
+import { siteConfig } from "@/lib/site"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://moshemim.dev'),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Mohammed Shemim - Software Engineer | Full-Stack Developer",
-    template: "%s | Mohammed Shemim",
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.personName}`,
   },
-  description: "Software engineer specializing in full-stack development, AI integration, and building scalable digital experiences. Expertise in React, Next.js, Node.js, Python, Go, and cloud technologies.",
+  description: siteConfig.description,
   keywords: [
-    "Mohammed Shemim",
+    siteConfig.personName,
     "Ethiopia",
     "Data Structures and Algorithms",
     "Software Engineer",
@@ -34,11 +35,11 @@ export const metadata: Metadata = {
     "Node.js",
     "Portfolio",
   ],
-  authors: [{ name: "Mohammed Shemim" }],
-  creator: "Mohammed Shemim",
-  publisher: "Mohammed Shemim",
+  authors: [{ name: siteConfig.personName }],
+  creator: siteConfig.personName,
+  publisher: siteConfig.personName,
   generator: 'Next.js',
-  applicationName: 'Mohammed Shemim Portfolio',
+  applicationName: siteConfig.name,
   referrer: 'origin-when-cross-origin',
   formatDetection: {
     email: false,
@@ -57,14 +58,14 @@ export const metadata: Metadata = {
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
   },
-  manifest: '/site.webmanifest',
+  manifest: '/manifest.webmanifest',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://moshemim.dev',
-    siteName: 'Mohammed Shemim Portfolio',
-    title: "Mohammed Shemim - Software Engineer | Full-Stack Developer",
-    description: "Software engineer specializing in full-stack development, AI integration, and building scalable digital experiences. Expertise in React, Next.js, Node.js, Python, Go, and cloud technologies.",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: siteConfig.title,
+    description: siteConfig.description,
     images: [
       {
         url: '/Portfolio.png',
@@ -76,9 +77,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Mohammed Shemim - Software Engineer",
-    description: "Software engineer specializing in full-stack development, AI integration, and building scalable digital experiences.",
-    creator: '@mohammedshemim',
+    title: siteConfig.shortTitle,
+    description: siteConfig.description,
+    creator: siteConfig.social.twitter,
     images: ['/Portfolio.png'],
   },
   robots: {
@@ -110,7 +111,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#000000" />
         <StructuredData />
       </head>
-      <body className={cn("min-h-screen bg-background font-sans antialiased selection:bg-primary/20")}>
+      <body className={cn(inter.variable, "min-h-screen overflow-x-clip bg-background font-sans antialiased selection:bg-primary/20")}>
         {children}
         <ScheduleCard />
         <Toaster

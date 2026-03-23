@@ -1,10 +1,11 @@
 import { MetadataRoute } from 'next'
+import { siteConfig } from '@/lib/site'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Mohammed Shemim - Software Engineer',
+    name: siteConfig.title,
     short_name: 'M. Shemim',
-    description: 'Software engineer specializing in full-stack development, AI integration, and building scalable digital experiences.',
+    description: siteConfig.description,
     start_url: '/',
     display: 'standalone',
     background_color: '#000000',

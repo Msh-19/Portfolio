@@ -1,7 +1,7 @@
 "use client"
 
 import { GlassCard } from "@/components/ui/glass-card"
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import Image from "next/image"
 
 const projects = [
@@ -152,6 +152,7 @@ export function Work() {
                           src={project.image || "/placeholder.svg"}
                           alt={project.imageAlt || project.title}
                           fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
                           className="object-cover transition-transform duration-700 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
@@ -162,6 +163,7 @@ export function Work() {
                           src={project.image || "/placeholder.svg"}
                           alt={project.imageAlt || project.title}
                           fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
                           className="object-cover transition-transform duration-700 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />

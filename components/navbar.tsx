@@ -11,7 +11,6 @@ import {
   MobileNavHeader,
   MobileNavMenu,
   MobileNavToggle,
-  NavbarButton,
 } from "@/components/ui/resizable-navbar"
 
 export function Navbar() {
@@ -47,19 +46,16 @@ export function Navbar() {
 
         {/* Resume Button */}
         <div className="relative z-20">
-          <NavbarButton
+          <a
             href="/resume.pdf"
-            variant="primary"
-            className="bg-primary text-black hover:bg-primary/90 flex items-center gap-2"
-            as="a"
+            className="px-4 py-2 rounded-md bg-primary text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 hover:bg-primary/90 transition duration-200 inline-flex items-center gap-2 text-center"
             target="_blank"
             rel="noopener noreferrer"
-            // @ts-ignore
             download
           >
             <Download className="w-4 h-4" />
             Resume
-          </NavbarButton>
+          </a>
         </div>
       </NavBody>
 

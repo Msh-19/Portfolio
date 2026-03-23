@@ -1,7 +1,7 @@
 "use client"
 
 import { GlassCard } from "@/components/ui/glass-card"
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 
 const techStack = [
   {
@@ -52,7 +52,7 @@ const techStack = [
 
 export function TechStack() {
   return (
-    <section id="tech-stack" className="py-32 relative">
+    <section id="tech-stack" className="relative overflow-hidden py-32">
       <div className="container mx-auto px-6">
         <div className="mb-20">
           <motion.h2
@@ -112,7 +112,7 @@ export function TechStack() {
       </div>
 
       {/* Background gradient decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 h-[70vw] max-h-[600px] w-[70vw] max-w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
     </section>
   )
 }

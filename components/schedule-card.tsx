@@ -1,34 +1,36 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { getCalApi } from "@calcom/embed-react";
 import { Button } from "@/components/ui/moving-border";
 import { X } from "lucide-react";
 
 export function ScheduleCard() {
   const [isVisible, setIsVisible] = useState(true);
-
-  // Store the Cal API instance
   const [calApi, setCalApi] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi({ namespace: "15min" });
-      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
-      setCalApi(() => cal);
-    })();
-  }, []);
+  const handleSchedule = async () => {
+    try {
+      setIsLoading(true);
+      const api =
+        calApi ||
+        (await getCalApi({ namespace: "15min" }).then((cal) => {
+          cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+          setCalApi(() => cal);
+          return cal;
+        }));
 
-  const handleSchedule = () => {
-    if (calApi) {
-      calApi("modal", {
+      api("modal", {
         calLink: "mohammed-shemim-hdzel3/15min",
         config: { layout: "month_view" },
       });
-    } else {
-        console.error("Cal API not initialized yet");
+    } catch (error) {
+      console.error("Failed to initialize Cal.com", error);
+    } finally {
+      setIsLoading(false);
     }
-  };
+  }
 
   if (!isVisible) return null;
 
@@ -66,9 +68,10 @@ export function ScheduleCard() {
             <div className="flex gap-2 sm:gap-3 justify-end pt-1 sm:pt-2">
               <button
                 onClick={handleSchedule}
-                className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-bold bg-primary text-black rounded-md hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all duration-200 shadow-lg"
+                disabled={isLoading}
+                className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-bold bg-primary text-black rounded-md hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all duration-200 shadow-lg disabled:cursor-not-allowed disabled:opacity-70"
               >
-                Schedule
+                {isLoading ? "Loading..." : "Schedule"}
               </button>
             </div>
           </div>

@@ -9,7 +9,7 @@ import { ContactForm } from "@/components/contact-form"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-foreground selection:bg-primary/30">
+    <main className="min-h-screen overflow-x-clip bg-background text-foreground selection:bg-primary/30">
       <Navbar />
       <Hero />
       <Services />

@@ -1,37 +1,44 @@
 "use client"
 
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect"
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import { ArrowRight } from "lucide-react"
 import { useEffect, useState } from "react"
-import { FlipWords } from "@/components/ui/flip-words"
 
 export function Hero() {
-  const [dimensions, setDimensions] = useState({ rows: 20, cols: 40 }); // Default initial size
+  const [dimensions, setDimensions] = useState({ rows: 0, cols: 0 })
 
   useEffect(() => {
-    const updateDimensions = () => {
-      // Calculate needed rows and cols + some buffer to ensure coverage
-      const cellSize = 56; // Matching the default in BackgroundRippleEffect
-      const cols = Math.ceil(window.innerWidth / cellSize);
-      const rows = Math.ceil(window.innerHeight / cellSize); // Use actual window height or section height
+    let frame = 0
 
-      setDimensions({
-        rows: Math.max(20, rows),
-        cols: Math.max(40, cols)
-      });
-    };
+    const updateDimensions = () => {
+      cancelAnimationFrame(frame)
+      frame = window.requestAnimationFrame(() => {
+        const cellSize = 56
+        const cols = Math.ceil(window.innerWidth / cellSize) + 2
+        const rows = Math.ceil(window.innerHeight / cellSize) + 2
+
+        setDimensions((current) =>
+          current.rows === rows && current.cols === cols ? current : { rows, cols }
+        )
+      })
+    }
 
     updateDimensions();
 
     window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
-  }, []);
+    return () => {
+      cancelAnimationFrame(frame)
+      window.removeEventListener("resize", updateDimensions)
+    }
+  }, [])
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden overflow-x-hidden pt-32 pb-32">
       <div className="absolute inset-0 z-0">
-        <BackgroundRippleEffect rows={dimensions.rows} cols={dimensions.cols} />
+        {dimensions.rows > 0 && dimensions.cols > 0 ? (
+          <BackgroundRippleEffect rows={dimensions.rows} cols={dimensions.cols} />
+        ) : null}
       </div>
 
       {/* Background Liquid Elements */}

@@ -1,22 +1,22 @@
-"use client"
+import { siteConfig } from "@/lib/site"
 
 export function StructuredData() {
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Mohammed Shemim",
-    url: "https://mohammedshemim.com",
-    image: "https://mohammedshemim.com/apple-icon.png",
+    name: siteConfig.personName,
+    url: siteConfig.url,
+    image: `${siteConfig.url}/apple-icon.png`,
     sameAs: [
-      "https://github.com/Msh-19",
-      "https://t.me/MohammedShemim",
+      siteConfig.social.github,
+      siteConfig.social.telegram,
     ],
     jobTitle: "Software Engineer",
     worksFor: {
       "@type": "Organization",
       name: "Freelance",
     },
-    description: "Software engineer specializing in full-stack development, AI integration, and building scalable digital experiences.",
+    description: siteConfig.description,
     knowsAbout: [
       "JavaScript",
       "TypeScript",
@@ -34,12 +34,12 @@ export function StructuredData() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Mohammed Shemim Portfolio",
-    url: "https://mohammedshemim.com",
-    description: "Software engineer specializing in full-stack development, AI integration, and building scalable digital experiences.",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    description: siteConfig.description,
     author: {
       "@type": "Person",
-      name: "Mohammed Shemim",
+      name: siteConfig.personName,
     },
   }
 
@@ -47,11 +47,10 @@ export function StructuredData() {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
     dateCreated: "2024-01-01T00:00:00+00:00",
-    dateModified: new Date().toISOString(),
     mainEntity: {
       "@type": "Person",
-      name: "Mohammed Shemim",
-      description: "Software engineer specializing in full-stack development, AI integration, and building scalable digital experiences.",
+      name: siteConfig.personName,
+      description: siteConfig.description,
     },
   }
 
