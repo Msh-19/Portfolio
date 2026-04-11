@@ -3,47 +3,13 @@
 import { GlassCard } from "@/components/ui/glass-card"
 import { motion } from "motion/react"
 import Image from "next/image"
+import { featuredProjects } from "@/lib/portfolio-data"
 
-const projects = [
-  {
-    title: "ChatApp",
-    category: "Realtime Communication",
-    description: "A safe realtime socket based chat app that connects users through their google account. It also includes an ai chat feature.",
-    tags: ["Realtime", "Socket.io", "AI", "Google Auth"],
-    link: "https://chat-app-mvp.vercel.app",
-    image: "/ChatAPP.png",
-    imageAlt: "ChatApp - Real-time messaging application interface with Google authentication and AI chat features",
-    color: "from-blue-500/20 to-cyan-500/20",
-  },
-  {
-    title: "InXtract",
-    category: "AI Document Summarizer",
-    description: "A summarizer of text from research papers. My role focused on integration and project management.",
-    tags: ["Integration", "Project Management"],
-    image: "/inxtractLanding.png",
-    imageAlt: "InXtract - AI-powered research paper summarization tool landing page showing document upload and summary generation",
-    link: "https://inxtract.vercel.app",
-    color: "from-purple-500/20 to-pink-500/20",
-  },
-  {
-    title: "Triage it",
-    category: "AI Sentiment Analysis",
-    description: "Reading text and understanding the sentiment in them for teams to quickly assess the criticality of a complaint, and suggest proper responses.",
-    tags: ["AI", "Sentiment Analysis", "Team Productivity"],
-    link: "https://triage-it.vercel.app",
-    image: "/Triage_it.png",
-    imageAlt: "Triage it - AI Sentiment Analysis dashboard showing customer complaint analysis and sentiment detection interface",
-    color: "from-orange-500/20 to-red-500/20",
-  },
-  {
-    title: "BankDash",
-    category: "Banking Dashboard",
-    description: "A virtual credit card tracker and expense manager.",
-    tags: ["Frontend Implementation", "UI/UX"],
-    image: "/BankDashLanding.png",
-    imageAlt: "BankDash - Modern banking dashboard displaying virtual credit cards and expense management interface",
-    color: "from-emerald-500/20 to-teal-500/20",
-  },
+const projectColors = [
+  "from-blue-500/20 to-cyan-500/20",
+  "from-purple-500/20 to-pink-500/20",
+  "from-orange-500/20 to-red-500/20",
+  "from-emerald-500/20 to-teal-500/20",
 ]
 
 export function Work() {
@@ -95,7 +61,7 @@ export function Work() {
         </div>
 
         <div className="space-y-20">
-          {projects.map((project, index) => (
+          {featuredProjects.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 40 }}
@@ -105,8 +71,8 @@ export function Work() {
             >
               <GlassCard className="p-0 overflow-hidden group">
                 <div className="grid md:grid-cols-2 gap-0">
-                  <div className={`p-12 flex flex-col justify-center relative overflow-hidden`}>
-                    <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
+                  <div className="relative flex flex-col justify-center overflow-hidden p-12">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${projectColors[index % projectColors.length]} opacity-0 transition-opacity duration-700 group-hover:opacity-100`} />
                     <div className="relative z-10">
                       <span className="text-sm font-medium text-white/50 mb-4 block uppercase tracking-wider">
                         {project.category}

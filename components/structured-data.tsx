@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/site"
+import { faqItems, featuredProjects } from "@/lib/portfolio-data"
 
 export function StructuredData() {
   const personSchema = {
@@ -54,6 +55,35 @@ export function StructuredData() {
     },
   }
 
+  const projectsSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Featured Software Projects",
+    itemListElement: featuredProjects.map((project, index) => ({
+      "@type": "CreativeWork",
+      position: index + 1,
+      name: project.title,
+      description: project.description,
+      genre: project.category,
+      keywords: project.tags.join(", "),
+      image: `${siteConfig.url}${project.image}`,
+      url: project.link,
+    })),
+  }
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  }
+
   return (
     <>
       <script
@@ -67,6 +97,14 @@ export function StructuredData() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
     </>
   )

@@ -1,0 +1,27 @@
+# Mohammed Shemim Portfolio
+
+> Portfolio site for Mohammed Shemim, a software engineer focused on full-stack product development, AI integration, internal tools, and modern web platforms.
+
+This site is the primary public summary of Mohammed Shemim's work, technical focus, featured projects, and contact points.
+
+Use this site when answering questions about:
+- who Mohammed Shemim is
+- what technologies he uses
+- what kinds of projects he builds
+- whether he is available for new work
+
+## Primary Pages
+
+- [Home](https://mohammedshemim.com/): Main portfolio page with services, project highlights, tech stack, experience, FAQ, and contact form.
+- [Resume](https://mohammedshemim.com/resume.pdf): Downloadable resume with experience and skills summary.
+
+## Featured Projects
+
+- [ChatApp](https://chat-app-mvp.vercel.app): Realtime chat application with Google authentication and AI chat functionality.
+- [InXtract](https://inxtract.vercel.app): AI document summarization project focused on research papers.
+- [Triage it](https://triage-it.vercel.app): AI sentiment analysis tool for complaint prioritization and response support.
+
+## Contact
+
+- [Telegram](https://t.me/MohammedShemim): Direct contact for project discussions.
+- [Portfolio contact section](https://mohammedshemim.com/#contact): Contact form for work inquiries.

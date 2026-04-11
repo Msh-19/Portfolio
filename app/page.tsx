@@ -6,6 +6,7 @@ import { TechStack } from "@/components/tech-stack"
 import { Experience } from "@/components/experience"
 import { Footer } from "@/components/footer"
 import { ContactForm } from "@/components/contact-form"
+import { FAQ } from "@/components/faq"
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Work />
       <TechStack />
       <Experience />
+      <FAQ />
 
       {/* Contact Form Section */}
       <section id="contact" className="py-32 relative">

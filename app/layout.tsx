@@ -12,6 +12,9 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: siteConfig.url,
+  },
   title: {
     default: siteConfig.title,
     template: `%s | ${siteConfig.personName}`,

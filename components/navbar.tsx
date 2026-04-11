@@ -6,7 +6,6 @@ import { Download } from "lucide-react"
 import {
   Navbar as ResizableNavbar,
   NavBody,
-  NavItems,
   MobileNav,
   MobileNavHeader,
   MobileNavMenu,
@@ -20,6 +19,7 @@ export function Navbar() {
     { name: "Services", link: "#services" },
     { name: "Work", link: "#work" },
     { name: "Experience", link: "#experience" },
+    { name: "FAQ", link: "#faq" },
     { name: "Contact", link: "#contact" },
   ]
 
@@ -34,27 +34,39 @@ export function Navbar() {
         {/* Logo */}
         <Link
           href="#hero"
-          className="relative z-20 flex items-center space-x-2 px-2 py-1 text-sm font-normal"
+          className="relative z-20 flex shrink-0 items-center space-x-2 px-2 py-1 text-sm font-normal"
         >
-          <span className="text-xl font-bold tracking-tighter text-foreground">
-            Mohammed Shemim<span className="text-primary">.</span>
+          <span className="text-lg font-bold tracking-tighter text-foreground xl:text-xl">
+            <span className="hidden xl:inline">Mohammed Shemim</span>
+            <span className="xl:hidden">M. Shemim</span>
+            <span className="text-primary">.</span>
           </span>
         </Link>
 
         {/* Navigation Items */}
-        <NavItems items={navItems} />
+        <nav className="mx-auto hidden min-w-0 items-center justify-center gap-1 text-sm font-medium text-white/70 lg:flex xl:gap-2">
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.link}
+              className="rounded-full px-3 py-2 text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+            >
+              {item.name}
+            </a>
+          ))}
+        </nav>
 
         {/* Resume Button */}
-        <div className="relative z-20">
+        <div className="relative z-20 shrink-0">
           <a
             href="/resume.pdf"
-            className="px-4 py-2 rounded-md bg-primary text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 hover:bg-primary/90 transition duration-200 inline-flex items-center gap-2 text-center"
+            className="relative inline-flex cursor-pointer items-center gap-2 rounded-md bg-primary px-3 py-2 text-sm font-bold text-black text-center transition duration-200 hover:-translate-y-0.5 hover:bg-primary/90 xl:px-4"
             target="_blank"
             rel="noopener noreferrer"
             download
           >
             <Download className="w-4 h-4" />
-            Resume
+            <span className="hidden xl:inline">Resume</span>
           </a>
         </div>
       </NavBody>
