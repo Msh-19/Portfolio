@@ -43,7 +43,6 @@ export function Hero() {
 
       {/* Background Liquid Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-
         <div className="absolute top-[-10%] left-[-10%] w-[80vw] sm:w-[50vw] h-[80vw] sm:h-[50vw] bg-primary/20 rounded-full blur-[120px] animate-blob mix-blend-screen" />
         <div className="absolute top-[20%] right-[-5%] sm:right-[-10%] w-[60vw] sm:w-[40vw] h-[60vw] sm:h-[40vw] bg-accent/20 rounded-full blur-[120px] animate-blob animation-delay-2000 mix-blend-screen" />
         <div className="absolute bottom-[-10%] left-[10%] sm:left-[20%] w-[70vw] sm:w-[45vw] h-[70vw] sm:h-[45vw] bg-secondary/20 rounded-full blur-[120px] animate-blob animation-delay-4000 mix-blend-screen" />

@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: siteConfig.description,
     start_url: '/',
     display: 'standalone',
-    background_color: '#000000',
-    theme_color: '#000000',
+    background_color: '#faf9f6',
+    theme_color: '#faf9f6',
     icons: [
       {
         src: '/favicon.ico',
@@ -17,13 +17,13 @@ export default function manifest(): MetadataRoute.Manifest {
         type: 'image/x-icon',
       },
       {
-        src: '/icon-dark-32x32.png',
-        sizes: '32x32',
+        src: '/android-chrome-192x192.png',
+        sizes: '192x192',
         type: 'image/png',
       },
       {
-        src: '/apple-icon.png',
-        sizes: '180x180',
+        src: '/android-chrome-512x512.png',
+        sizes: '512x512',
         type: 'image/png',
       },
     ],

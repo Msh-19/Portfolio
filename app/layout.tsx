@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Inter } from 'next/font/google'
+import { Instrument_Sans, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
 import "./globals.css"
 import { cn } from "@/lib/utils"
 import { Analytics } from '@vercel/analytics/react'
@@ -8,7 +8,9 @@ import { StructuredData } from "@/components/structured-data"
 import { Toaster } from "sonner"
 import { siteConfig } from "@/lib/site"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const instrumentSans = Instrument_Sans({ subsets: ["latin"], variable: "--font-instrument" })
+const instrumentSerif = Instrument_Serif({ subsets: ["latin"], weight: "400", variable: "--font-instrument-serif" })
+const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" })
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -111,19 +113,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#faf9f6" />
         <StructuredData />
       </head>
-      <body className={cn(inter.variable, "min-h-screen overflow-x-clip bg-background font-sans antialiased selection:bg-primary/20")}>
+      <body className={cn(instrumentSans.variable, instrumentSerif.variable, jetbrainsMono.variable, "min-h-screen overflow-x-clip bg-background font-sans antialiased selection:bg-foreground/15 noise-overlay")}>
         {children}
         <ScheduleCard />
         <Toaster
           position="bottom-right"
           toastOptions={{
             style: {
-              background: "hsl(0 0% 8%)",
-              border: "1px solid hsl(0 0% 15%)",
-              color: "hsl(0 0% 100%)",
+              background: "oklch(0.12 0.01 60)",
+              border: "1px solid oklch(0.3 0.01 60)",
+              color: "oklch(0.985 0.002 90)",
             },
           }}
         />

@@ -66,15 +66,15 @@ export function ContactForm() {
             <form
                 onSubmit={handleSubmit(onSubmit)}
                 autoComplete="off"
-                className="glass rounded-2xl p-8 md:p-10 space-y-6"
+                className="border border-foreground/10 bg-card rounded-xl p-8 md:p-10 space-y-6"
             >
                 {/* Name field */}
                 <div className="space-y-2">
                     <label
                         htmlFor="contact-name"
-                        className="flex items-center gap-2 text-sm font-medium text-white/70"
+                        className="flex items-center gap-2 text-sm font-medium text-foreground/70 font-mono"
                     >
-                        <User className="w-4 h-4 text-primary" />
+                        <User className="w-4 h-4 text-foreground" />
                         Name
                     </label>
                     <input
@@ -84,10 +84,10 @@ export function ContactForm() {
                         maxLength={100}
                         autoComplete="name"
                         {...register("name")}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all duration-300"
+                        className="w-full px-4 py-3 bg-background border border-foreground/15 rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground focus:ring-1 focus:ring-foreground/20 transition-all duration-300"
                     />
                     {errors.name && (
-                        <p className="text-sm text-red-400 pl-1">{errors.name.message}</p>
+                        <p className="text-sm text-destructive pl-1">{errors.name.message}</p>
                     )}
                 </div>
 
@@ -95,9 +95,9 @@ export function ContactForm() {
                 <div className="space-y-2">
                     <label
                         htmlFor="contact-email"
-                        className="flex items-center gap-2 text-sm font-medium text-white/70"
+                        className="flex items-center gap-2 text-sm font-medium text-foreground/70 font-mono"
                     >
-                        <Mail className="w-4 h-4 text-primary" />
+                        <Mail className="w-4 h-4 text-foreground" />
                         Email
                     </label>
                     <input
@@ -107,10 +107,10 @@ export function ContactForm() {
                         maxLength={254}
                         autoComplete="email"
                         {...register("email")}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all duration-300"
+                        className="w-full px-4 py-3 bg-background border border-foreground/15 rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground focus:ring-1 focus:ring-foreground/20 transition-all duration-300"
                     />
                     {errors.email && (
-                        <p className="text-sm text-red-400 pl-1">{errors.email.message}</p>
+                        <p className="text-sm text-destructive pl-1">{errors.email.message}</p>
                     )}
                 </div>
 
@@ -118,9 +118,9 @@ export function ContactForm() {
                 <div className="space-y-2">
                     <label
                         htmlFor="contact-message"
-                        className="flex items-center gap-2 text-sm font-medium text-white/70"
+                        className="flex items-center gap-2 text-sm font-medium text-foreground/70 font-mono"
                     >
-                        <MessageSquare className="w-4 h-4 text-primary" />
+                        <MessageSquare className="w-4 h-4 text-foreground" />
                         Message
                     </label>
                     <textarea
@@ -129,10 +129,10 @@ export function ContactForm() {
                         rows={5}
                         maxLength={2000}
                         {...register("message")}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all duration-300 resize-none"
+                        className="w-full px-4 py-3 bg-background border border-foreground/15 rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground focus:ring-1 focus:ring-foreground/20 transition-all duration-300 resize-none"
                     />
                     {errors.message && (
-                        <p className="text-sm text-red-400 pl-1">
+                        <p className="text-sm text-destructive pl-1">
                             {errors.message.message}
                         </p>
                     )}
@@ -154,7 +154,7 @@ export function ContactForm() {
                     disabled={isSubmitting}
                     whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                     whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                    className="w-full py-4 bg-primary text-black rounded-xl font-bold text-lg flex items-center justify-center gap-3 hover:shadow-[0_0_40px_-10px_rgba(255,157,0,0.4)] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="w-full py-4 bg-foreground text-background rounded-full font-semibold text-base flex items-center justify-center gap-3 hover:bg-foreground/90 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                     {isSubmitting ? (
                         <>
@@ -169,7 +169,7 @@ export function ContactForm() {
                     )}
                 </motion.button>
 
-                <p className="text-center text-xs text-white/30">
+                <p className="text-center text-xs text-muted-foreground">
                     Your message will be sent directly to me via Telegram
                 </p>
             </form>
