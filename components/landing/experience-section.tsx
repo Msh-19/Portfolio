@@ -71,7 +71,7 @@ export function ExperienceSection() {
   const active = roles[activeTab];
 
   return (
-    <section id="experience" ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="experience" ref={sectionRef} className="relative py-24 lg:py-32 overflow-x-clip">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           {/* Left: Content */}
@@ -84,12 +84,10 @@ export function ExperienceSection() {
               <span className="w-8 h-px bg-foreground/30" />
               Experience
             </span>
-            <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-8">
-              Where I&apos;ve
-              <br />
-              <span className="text-muted-foreground">been building.</span>
+            <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-6">
+              Where I&apos;ve been building.
             </h2>
-            <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               Internships, a co-founded studio, and shipped client work across AI
               research, ERP integration, and fintech frontends.
             </p>

@@ -59,7 +59,7 @@ export function ProcessSection() {
     <section
       id="how-it-works"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 bg-foreground text-background overflow-hidden"
+      className="relative py-24 lg:py-32 bg-foreground text-background overflow-x-clip"
     >
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <div

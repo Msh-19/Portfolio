@@ -10,8 +10,10 @@ import { ContactSection } from "@/components/landing/contact-section"
 import { FooterSection } from "@/components/landing/footer-section"
 
 export default function Home() {
+  // overflow-x-clip (not -hidden): -hidden turns <main> into a scroll
+  // container, which stops position: sticky from working inside it
   return (
-    <main className="relative min-h-screen overflow-x-hidden">
+    <main className="relative min-h-screen overflow-x-clip">
       <Navigation />
       <HeroSection />
       <FeaturesSection />
