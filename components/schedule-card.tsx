@@ -69,7 +69,7 @@ export function ScheduleCard() {
         className="grid place-items-center w-8 h-8 rounded-full bg-background border border-foreground/10 text-muted-foreground hover:text-foreground shadow-lg transition-colors"
         aria-label="Dismiss booking button"
       >
-        <X className="w-3.5 h-3.5" />
+        <X className="w-3.5 h-3.5" aria-hidden="true" />
       </button>
     </div>
   );

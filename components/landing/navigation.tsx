@@ -111,7 +111,7 @@ export function Navigation() {
                 isScrolled ? "px-4 h-8 text-xs" : "px-6 h-10 text-sm"
               }`}
             >
-              <Download className="w-3.5 h-3.5" />
+              <Download className="w-3.5 h-3.5" aria-hidden="true" />
               Resume
             </a>
           </div>
@@ -125,7 +125,11 @@ export function Navigation() {
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" aria-hidden="true" />
+            ) : (
+              <Menu className="w-6 h-6" aria-hidden="true" />
+            )}
           </button>
         </div>
       </nav>
@@ -167,7 +171,7 @@ export function Navigation() {
               onClick={() => setIsMobileMenuOpen(false)}
               className="w-full inline-flex items-center justify-center gap-2 bg-foreground text-background rounded-full h-14 text-base"
             >
-              <Download className="w-5 h-5" />
+              <Download className="w-5 h-5" aria-hidden="true" />
               Download Resume
             </a>
           </div>

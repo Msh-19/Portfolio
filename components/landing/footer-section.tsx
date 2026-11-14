@@ -77,7 +77,7 @@ export function FooterSection() {
                         >
                           {link.name}
                           {external && (
-                            <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                            <ArrowUpRight aria-hidden="true" className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                           )}
                         </a>
                       </li>

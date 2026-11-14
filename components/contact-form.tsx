@@ -66,7 +66,7 @@ export function ContactForm() {
             <form
                 onSubmit={handleSubmit(onSubmit)}
                 autoComplete="off"
-                className="border border-foreground/10 bg-card rounded-xl p-8 md:p-10 space-y-6"
+                className="space-y-6"
             >
                 {/* Name field */}
                 <div className="space-y-2">
@@ -74,7 +74,7 @@ export function ContactForm() {
                         htmlFor="contact-name"
                         className="flex items-center gap-2 text-sm font-medium text-foreground/70 font-mono"
                     >
-                        <User className="w-4 h-4 text-foreground" />
+                        <User className="w-4 h-4" aria-hidden="true" />
                         Name
                     </label>
                     <input
@@ -84,7 +84,7 @@ export function ContactForm() {
                         maxLength={100}
                         autoComplete="name"
                         {...register("name")}
-                        className="w-full px-4 py-3 bg-background border border-foreground/15 rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground focus:ring-1 focus:ring-foreground/20 transition-all duration-300"
+                        className="w-full px-4 py-3 bg-background border border-foreground/15 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground focus:ring-1 focus:ring-foreground/20 transition-all duration-300"
                     />
                     {errors.name && (
                         <p className="text-sm text-destructive pl-1">{errors.name.message}</p>
@@ -97,7 +97,7 @@ export function ContactForm() {
                         htmlFor="contact-email"
                         className="flex items-center gap-2 text-sm font-medium text-foreground/70 font-mono"
                     >
-                        <Mail className="w-4 h-4 text-foreground" />
+                        <Mail className="w-4 h-4" aria-hidden="true" />
                         Email
                     </label>
                     <input
@@ -107,7 +107,7 @@ export function ContactForm() {
                         maxLength={254}
                         autoComplete="email"
                         {...register("email")}
-                        className="w-full px-4 py-3 bg-background border border-foreground/15 rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground focus:ring-1 focus:ring-foreground/20 transition-all duration-300"
+                        className="w-full px-4 py-3 bg-background border border-foreground/15 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground focus:ring-1 focus:ring-foreground/20 transition-all duration-300"
                     />
                     {errors.email && (
                         <p className="text-sm text-destructive pl-1">{errors.email.message}</p>
@@ -120,7 +120,7 @@ export function ContactForm() {
                         htmlFor="contact-message"
                         className="flex items-center gap-2 text-sm font-medium text-foreground/70 font-mono"
                     >
-                        <MessageSquare className="w-4 h-4 text-foreground" />
+                        <MessageSquare className="w-4 h-4" aria-hidden="true" />
                         Message
                     </label>
                     <textarea
@@ -129,7 +129,7 @@ export function ContactForm() {
                         rows={5}
                         maxLength={2000}
                         {...register("message")}
-                        className="w-full px-4 py-3 bg-background border border-foreground/15 rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground focus:ring-1 focus:ring-foreground/20 transition-all duration-300 resize-none"
+                        className="w-full px-4 py-3 bg-background border border-foreground/15 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground focus:ring-1 focus:ring-foreground/20 transition-all duration-300 resize-none"
                     />
                     {errors.message && (
                         <p className="text-sm text-destructive pl-1">
@@ -158,12 +158,12 @@ export function ContactForm() {
                 >
                     {isSubmitting ? (
                         <>
-                            <Loader2 className="w-5 h-5 animate-spin" />
+                            <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" />
                             Sending...
                         </>
                     ) : (
                         <>
-                            <Send className="w-5 h-5" />
+                            <Send className="w-5 h-5" aria-hidden="true" />
                             Send Message
                         </>
                     )}

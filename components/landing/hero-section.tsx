@@ -131,7 +131,7 @@ export function HeroSection() {
               className="inline-flex items-center justify-center bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group transition-colors"
             >
               View my work
-              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+              <ArrowRight aria-hidden="true" className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="https://t.me/MohammedShemim"
