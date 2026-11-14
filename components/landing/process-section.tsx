@@ -87,7 +87,7 @@ export function ProcessSection() {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 [&>*]:min-w-0">
           <div className="space-y-0">
             {steps.map((step, index) => (
               <button

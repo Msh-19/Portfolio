@@ -73,7 +73,9 @@ export function ExperienceSection() {
   return (
     <section id="experience" ref={sectionRef} className="relative py-24 lg:py-32 overflow-x-clip">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        {/* [&>*]:min-w-0 lets the columns shrink below the tab row's width;
+            without it the whole section is wider than a phone screen */}
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start [&>*]:min-w-0">
           {/* Left: Content */}
           <div
             className={`transition-all duration-700 ${

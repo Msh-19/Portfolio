@@ -22,14 +22,15 @@ function ProjectCard({
   const content = (
     <>
       {/* Screenshots vary from 1.27:1 to 2.19:1 — a fixed frame keeps the grid
-          even, and top alignment keeps each landing page's hero in view */}
+          even. Anchoring top-left keeps each page's logo and headline in view
+          (wide shots otherwise lose both edges) */}
       <div className="relative aspect-[16/10] overflow-hidden border-b border-foreground/10 bg-muted">
         <Image
           src={project.image}
           alt={project.imageAlt}
           fill
           sizes="(min-width: 768px) 50vw, 100vw"
-          className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+          className="object-cover object-left-top origin-top-left transition-transform duration-700 group-hover:scale-[1.02]"
         />
       </div>
 
