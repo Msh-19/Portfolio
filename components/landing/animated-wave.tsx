@@ -41,7 +41,8 @@ function drawWave(
 }
 
 export function AnimatedWave() {
-  const canvasRef = useAsciiCanvas(drawWave, 0.03);
+  // Drawn once and held still: keeps the texture without adding motion
+  const canvasRef = useAsciiCanvas(drawWave, 0.03, { static: true });
 
   return (
     <canvas

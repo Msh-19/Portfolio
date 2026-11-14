@@ -155,13 +155,34 @@ function AnimatedVisual({ type }: { type: string }) {
 function FeatureCard({ feature, index }: { feature: (typeof features)[0]; index: number }) {
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+  const visualRef = useRef<HTMLDivElement>(null);
+  // Hover-capable devices play the drawing on hover; touch devices play it
+  // while the row is in view. Reduced-motion users get a still frame.
+  const modeRef = useRef<"hover" | "view" | "still">("still");
+
+  const setPlaying = (playing: boolean) => {
+    const svg = visualRef.current?.querySelector("svg");
+    if (!svg) return;
+    if (playing && modeRef.current !== "still") svg.unpauseAnimations();
+    else svg.pauseAnimations();
+  };
 
   useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const canHover = window.matchMedia("(hover: hover)").matches;
+    modeRef.current = reduceMotion ? "still" : canHover ? "hover" : "view";
+
+    // Start from a representative frame rather than t=0, then hold still
+    const svg = visualRef.current?.querySelector("svg");
+    svg?.setCurrentTime(1);
+    svg?.pauseAnimations();
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) setIsVisible(true);
+        if (modeRef.current === "view") setPlaying(entry.isIntersecting);
       },
-      { threshold: 0.2 }
+      { threshold: 0.5 }
     );
     if (cardRef.current) observer.observe(cardRef.current);
     return () => observer.disconnect();
@@ -170,6 +191,8 @@ function FeatureCard({ feature, index }: { feature: (typeof features)[0]; index:
   return (
     <div
       ref={cardRef}
+      onMouseEnter={() => modeRef.current === "hover" && setPlaying(true)}
+      onMouseLeave={() => modeRef.current === "hover" && setPlaying(false)}
       className={`group relative transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
       }`}
@@ -187,7 +210,7 @@ function FeatureCard({ feature, index }: { feature: (typeof features)[0]; index:
             <p className="text-lg text-muted-foreground leading-relaxed">{feature.description}</p>
           </div>
           <div className="flex justify-center lg:justify-end">
-            <div className="w-48 h-40 text-foreground">
+            <div ref={visualRef} className="w-48 h-40 text-foreground" aria-hidden="true">
               <AnimatedVisual type={feature.visual} />
             </div>
           </div>

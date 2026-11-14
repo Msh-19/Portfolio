@@ -17,8 +17,14 @@ type DrawFn = (
  * - Pauses the loop while the canvas is off-screen
  * - Renders a single static frame when the user prefers reduced motion
  * - Caps devicePixelRatio at 2 and guards zero-size buffers
+ * - `static: true` always renders a single still frame (redrawn on resize)
  */
-export function useAsciiCanvas(draw: DrawFn, timeStep: number) {
+export function useAsciiCanvas(
+  draw: DrawFn,
+  timeStep: number,
+  options: { static?: boolean } = {}
+) {
+  const isStatic = options.static ?? false;
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const drawRef = useRef(draw);
   drawRef.current = draw;
@@ -35,9 +41,9 @@ export function useAsciiCanvas(draw: DrawFn, timeStep: number) {
     let frame = 0;
     let running = false;
 
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+    const reduceMotion =
+      isStatic ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -94,7 +100,7 @@ export function useAsciiCanvas(draw: DrawFn, timeStep: number) {
       resizeObserver.disconnect();
       intersectionObserver.disconnect();
     };
-  }, [timeStep]);
+  }, [timeStep, isStatic]);
 
   return canvasRef;
 }

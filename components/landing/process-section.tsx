@@ -55,13 +55,6 @@ export function ProcessSection() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % steps.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section
       id="how-it-works"
@@ -112,11 +105,6 @@ export function ProcessSection() {
                       {step.title}
                     </h3>
                     <p className="text-background/60 leading-relaxed">{step.description}</p>
-                    {activeStep === index && (
-                      <div className="mt-4 h-px bg-background/20 overflow-hidden">
-                        <div className="h-full bg-background w-0" style={{ animation: "progress 5s linear forwards" }} />
-                      </div>
-                    )}
                   </div>
                 </div>
               </button>
@@ -143,24 +131,14 @@ export function ProcessSection() {
                       style={{ animationDelay: `${lineIndex * 80}ms` }}
                     >
                       <span className="text-background/20 select-none w-8 inline-block">{lineIndex + 1}</span>
-                      <span className="inline-flex">
-                        {line.split("").map((char, charIndex) => (
-                          <span
-                            key={`${activeStep}-${lineIndex}-${charIndex}`}
-                            className="code-char-reveal"
-                            style={{ animationDelay: `${lineIndex * 80 + charIndex * 15}ms` }}
-                          >
-                            {char === " " ? " " : char}
-                          </span>
-                        ))}
-                      </span>
+                      <span>{line}</span>
                     </div>
                   ))}
                 </pre>
               </div>
 
               <div className="px-6 py-4 border-t border-background/10 flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-green-400" />
                 <span className="text-xs font-mono text-background/40">Ready</span>
               </div>
             </div>
@@ -169,10 +147,6 @@ export function ProcessSection() {
       </div>
 
       <style jsx>{`
-        @keyframes progress {
-          from { width: 0%; }
-          to { width: 100%; }
-        }
         .code-line-reveal {
           opacity: 0;
           transform: translateX(-8px);
@@ -181,13 +155,12 @@ export function ProcessSection() {
         @keyframes lineReveal {
           to { opacity: 1; transform: translateX(0); }
         }
-        .code-char-reveal {
-          opacity: 0;
-          filter: blur(8px);
-          animation: charReveal 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-        }
-        @keyframes charReveal {
-          to { opacity: 1; filter: blur(0); }
+        @media (prefers-reduced-motion: reduce) {
+          .code-line-reveal {
+            animation: none;
+            opacity: 1;
+            transform: none;
+          }
         }
       `}</style>
     </section>
