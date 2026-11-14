@@ -6,6 +6,8 @@ export type FeaturedProject = {
   image: string
   imageAlt: string
   link?: string
+  /** Optional one-line result shown on the Work card, e.g. "Cut triage time by 40%" */
+  outcome?: string
 }
 
 export const featuredProjects: FeaturedProject[] = [

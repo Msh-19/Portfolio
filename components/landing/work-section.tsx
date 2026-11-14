@@ -1,12 +1,99 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import { featuredProjects } from "@/lib/portfolio-data";
+import { featuredProjects, type FeaturedProject } from "@/lib/portfolio-data";
+
+function ProjectCard({
+  project,
+  index,
+  isVisible,
+}: {
+  project: FeaturedProject;
+  index: number;
+  isVisible: boolean;
+}) {
+  const className = `group flex flex-col h-full border border-foreground/10 hover:border-foreground/30 transition-all duration-700 ${
+    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+  }`;
+  const style = { transitionDelay: isVisible ? `${index * 100}ms` : "0ms" };
+
+  const content = (
+    <>
+      {/* Screenshots vary from 1.27:1 to 2.19:1 — a fixed frame keeps the grid
+          even, and top alignment keeps each landing page's hero in view */}
+      <div className="relative aspect-[16/10] overflow-hidden border-b border-foreground/10 bg-muted">
+        <Image
+          src={project.image}
+          alt={project.imageAlt}
+          fill
+          sizes="(min-width: 768px) 50vw, 100vw"
+          className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+        />
+      </div>
+
+      <div className="flex flex-1 flex-col p-6 lg:p-8">
+        <div className="flex items-start justify-between gap-4 mb-1">
+          <h3 className="text-2xl lg:text-3xl font-display transition-transform duration-500 group-hover:translate-x-1">
+            {project.title}
+          </h3>
+          {project.link && (
+            <ArrowUpRight
+              aria-hidden="true"
+              className="w-5 h-5 shrink-0 mt-1.5 text-muted-foreground transition-all duration-300 group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
+          )}
+        </div>
+        <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground mb-5">
+          {project.category}
+        </p>
+
+        {project.outcome && (
+          <p className="font-medium mb-2">{project.outcome}</p>
+        )}
+        <p className="text-muted-foreground leading-relaxed mb-6">
+          {project.description}
+        </p>
+
+        <ul className="mt-auto flex flex-wrap gap-2">
+          {project.tags.map((tag) => (
+            <li
+              key={tag}
+              className="px-2.5 py-1 border border-foreground/10 font-mono text-xs text-muted-foreground"
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
+  );
+
+  if (project.link) {
+    return (
+      <a
+        href={project.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+        style={style}
+      >
+        {content}
+        <span className="sr-only">(opens in a new tab)</span>
+      </a>
+    );
+  }
+
+  return (
+    <article className={className} style={style}>
+      {content}
+    </article>
+  );
+}
 
 export function WorkSection() {
   const [isVisible, setIsVisible] = useState(false);
-  const [activeProject, setActiveProject] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -20,107 +107,38 @@ export function WorkSection() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveProject((prev) => (prev + 1) % featuredProjects.length);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section id="work" ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="work" ref={sectionRef} className="relative py-24 lg:py-32">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Left: Content */}
-          <div
-            className={`transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
-            }`}
-          >
+        {/* Full-width heading row */}
+        <div
+          className={`flex flex-col gap-6 md:flex-row md:items-end md:justify-between mb-12 lg:mb-16 pb-8 border-b border-foreground/10 transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+        >
+          <div>
             <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
               <span className="w-8 h-px bg-foreground/30" />
               Selected work
             </span>
-            <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-8">
-              Things I&apos;ve
-              <br />
-              shipped.
+            <h2 className="text-4xl lg:text-6xl font-display tracking-tight">
+              Things I&apos;ve shipped.
             </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-12">
-              Real-time communication, AI document summarization, sentiment
-              analysis, and product dashboards — built and delivered end to end.
-            </p>
-
-            <div className="grid grid-cols-3 gap-4 sm:gap-8">
-              <div>
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-display mb-2">{featuredProjects.length}+</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">Featured projects</div>
-              </div>
-              <div>
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-display mb-2">4</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">Companies</div>
-              </div>
-              <div>
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-display mb-2">AI</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">Native workflows</div>
-              </div>
-            </div>
           </div>
+          <p className="font-mono text-sm text-muted-foreground">
+            {String(featuredProjects.length).padStart(2, "0")} projects
+          </p>
+        </div>
 
-          {/* Right: Project list */}
-          <div
-            className={`transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
-            }`}
-          >
-            <div className="border border-foreground/10">
-              <div className="px-6 py-4 border-b border-foreground/10 flex items-center justify-between">
-                <span className="text-sm font-mono text-muted-foreground">Projects</span>
-                <span className="flex items-center gap-2 text-xs font-mono text-green-600">
-                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                  Live
-                </span>
-              </div>
-
-              <div>
-                {featuredProjects.map((project, index) => {
-                  const Wrapper = project.link ? "a" : "div";
-                  return (
-                    <Wrapper
-                      key={project.title}
-                      {...(project.link
-                        ? { href: project.link, target: "_blank", rel: "noopener noreferrer" }
-                        : {})}
-                      onMouseEnter={() => setActiveProject(index)}
-                      className={`px-6 py-5 border-b border-foreground/5 last:border-b-0 flex items-center justify-between transition-all duration-300 group ${
-                        activeProject === index ? "bg-foreground/[0.02]" : ""
-                      } ${project.link ? "cursor-pointer" : ""}`}
-                    >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <span
-                          className={`w-2 h-2 rounded-full shrink-0 transition-colors duration-300 ${
-                            activeProject === index ? "bg-foreground" : "bg-foreground/20"
-                          }`}
-                        />
-                        <div className="min-w-0">
-                          <div className="font-medium flex items-center gap-1.5">
-                            {project.title}
-                            {project.link && (
-                              <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                            )}
-                          </div>
-                          <div className="text-sm text-muted-foreground truncate">{project.category}</div>
-                        </div>
-                      </div>
-                      <span className="font-mono text-xs text-muted-foreground shrink-0 hidden sm:block">
-                        {project.tags[0]}
-                      </span>
-                    </Wrapper>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+          {featuredProjects.map((project, index) => (
+            <ProjectCard
+              key={project.title}
+              project={project}
+              index={index}
+              isVisible={isVisible}
+            />
+          ))}
         </div>
       </div>
     </section>
