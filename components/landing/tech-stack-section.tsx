@@ -2,27 +2,23 @@
 
 import { useEffect, useState, useRef } from "react";
 
-const techStack = [
-  { name: "Next.js", category: "Framework" },
-  { name: "React", category: "Framework" },
-  { name: "Express", category: "Framework" },
-  { name: "Gin", category: "Framework" },
-  { name: "TypeScript", category: "Language" },
-  { name: "JavaScript", category: "Language" },
-  { name: "Go", category: "Language" },
-  { name: "Python", category: "Language" },
-  { name: "Java", category: "Language" },
-  { name: "C/C++", category: "Language" },
-  { name: "PHP", category: "Language" },
-  { name: "MySQL", category: "Database" },
-  { name: "MongoDB", category: "Database" },
-  { name: "Neo4j", category: "Database" },
-  { name: "AWS", category: "Cloud" },
-  { name: "Azure", category: "Cloud" },
-  { name: "Apache Kafka", category: "Tooling" },
-  { name: "Git / GitHub", category: "Tooling" },
-  { name: "Jest", category: "Testing" },
-  { name: "Cypress", category: "Testing" },
+// Category → technologies. Kept in line with the hero strip and Experience.
+const techGroups = [
+  {
+    category: "Frameworks",
+    items: ["Next.js", "React", "NestJS", "Node.js", "Express", "Gin"],
+  },
+  {
+    category: "Languages",
+    items: ["TypeScript", "JavaScript", "Go", "Python", "Java", "C/C++", "PHP"],
+  },
+  {
+    category: "Databases",
+    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Neo4j"],
+  },
+  { category: "Cloud", items: ["AWS", "Azure"] },
+  { category: "Tooling", items: ["Docker", "Apache Kafka", "Git / GitHub"] },
+  { category: "Testing", items: ["Jest", "Cypress"] },
 ];
 
 export function TechStackSection() {
@@ -41,60 +37,47 @@ export function TechStackSection() {
   }, []);
 
   return (
-    <section id="tech-stack" ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="tech-stack" ref={sectionRef} className="relative py-20 lg:py-24">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        {/* Compact centred heading */}
         <div
-          className={`text-center max-w-3xl mx-auto mb-16 lg:mb-24 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          className={`text-center max-w-2xl mx-auto mb-12 lg:mb-16 transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
+          <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-4">
             <span className="w-8 h-px bg-foreground/30" />
             Tech stack
             <span className="w-8 h-px bg-foreground/30" />
           </span>
-          <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-6">
-            The tools I reach
-            <br />
-            for every day.
+          <h2 className="text-3xl lg:text-5xl font-display tracking-tight mb-4">
+            The tools I reach for every day.
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-lg text-muted-foreground">
             Languages, frameworks, and infrastructure across the full stack.
           </p>
         </div>
-      </div>
 
-      <div className="w-full mb-6">
-        <div className="flex gap-6 marquee">
-          {[...Array(2)].map((_, setIndex) => (
-            <div key={setIndex} className="flex gap-6 shrink-0">
-              {techStack.map((tech) => (
-                <div
-                  key={`${tech.name}-${setIndex}`}
-                  className="shrink-0 px-8 py-6 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group"
-                >
-                  <div className="text-lg font-medium group-hover:translate-x-1 transition-transform">{tech.name}</div>
-                  <div className="text-sm text-muted-foreground">{tech.category}</div>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="w-full">
-        <div className="flex gap-6 marquee-reverse">
-          {[...Array(2)].map((_, setIndex) => (
-            <div key={setIndex} className="flex gap-6 shrink-0">
-              {[...techStack].reverse().map((tech) => (
-                <div
-                  key={`${tech.name}-reverse-${setIndex}`}
-                  className="shrink-0 px-8 py-6 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group"
-                >
-                  <div className="text-lg font-medium group-hover:translate-x-1 transition-transform">{tech.name}</div>
-                  <div className="text-sm text-muted-foreground">{tech.category}</div>
-                </div>
-              ))}
+        {/* Category columns */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-10">
+          {techGroups.map((group, index) => (
+            <div
+              key={group.category}
+              className={`border-t border-foreground/15 pt-4 transition-all duration-700 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
+              style={{ transitionDelay: isVisible ? `${index * 80}ms` : "0ms" }}
+            >
+              <h3 className="font-mono text-xs uppercase tracking-wider text-muted-foreground mb-4">
+                {group.category}
+              </h3>
+              <ul className="space-y-2">
+                {group.items.map((item) => (
+                  <li key={item} className="text-lg">
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
