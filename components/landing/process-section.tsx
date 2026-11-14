@@ -72,7 +72,7 @@ export function ProcessSection() {
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="mb-16 lg:mb-24">
-          <span className="inline-flex items-center gap-3 text-sm font-mono text-background/50 mb-6">
+          <span className="inline-flex items-center gap-3 text-sm font-mono text-background/70 mb-6">
             <span className="w-8 h-px bg-background/30" />
             Process
           </span>
@@ -95,7 +95,7 @@ export function ProcessSection() {
                 type="button"
                 onClick={() => setActiveStep(index)}
                 className={`w-full text-left py-8 border-b border-background/10 transition-all duration-500 group ${
-                  activeStep === index ? "opacity-100" : "opacity-40 hover:opacity-70"
+                  activeStep === index ? "opacity-100" : "opacity-60 hover:opacity-80"
                 }`}
               >
                 <div className="flex items-start gap-6">
@@ -119,7 +119,7 @@ export function ProcessSection() {
                   <div className="w-3 h-3 rounded-full bg-background/20" />
                   <div className="w-3 h-3 rounded-full bg-background/20" />
                 </div>
-                <span className="text-xs font-mono text-background/40">process.ts</span>
+                <span className="text-xs font-mono text-background/70">process.ts</span>
               </div>
 
               <div className="p-6 sm:p-8 font-mono text-xs sm:text-sm min-h-[280px] overflow-x-auto">
@@ -139,7 +139,7 @@ export function ProcessSection() {
 
               <div className="px-6 py-4 border-t border-background/10 flex items-center gap-3">
                 <span className="w-2 h-2 rounded-full bg-green-400" />
-                <span className="text-xs font-mono text-background/40">Ready</span>
+                <span className="text-xs font-mono text-background/70">Ready</span>
               </div>
             </div>
           </div>

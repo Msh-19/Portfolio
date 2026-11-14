@@ -90,14 +90,10 @@ export function FooterSection() {
         </div>
 
         {/* Bottom bar */}
-        <div className="py-8 border-t border-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
+        <div className="py-8 border-t border-foreground/10">
+          <p className="text-sm text-muted-foreground text-center md:text-left">
             © {new Date().getFullYear()} Mohammed Shemim. All rights reserved.
           </p>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span className="w-2 h-2 rounded-full bg-green-500" />
-            Available for new projects
-          </div>
         </div>
       </div>
     </footer>
