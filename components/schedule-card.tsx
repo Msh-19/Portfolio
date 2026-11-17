@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { getCalApi } from "@calcom/embed-react";
 import { Button } from "@/components/ui/moving-border";
-import { X } from "lucide-react";
+import { CalendarDays, Loader2, X } from "lucide-react";
 
 export function ScheduleCard() {
   const [isVisible, setIsVisible] = useState(true);
@@ -15,14 +15,15 @@ export function ScheduleCard() {
       setIsLoading(true);
       const api =
         calApi ||
-        (await getCalApi({ namespace: "15min" }).then((cal) => {
+        (await getCalApi({ namespace: "booking" }).then((cal) => {
           cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
           setCalApi(() => cal);
           return cal;
         }));
 
+      // Profile link (no event slug) lets visitors pick 15 or 30 minutes
       api("modal", {
-        calLink: "mohammed-shemim-hdzel3/15min",
+        calLink: "mohammed-shemim-hdzel3",
         config: { layout: "month_view" },
       });
     } catch (error) {
@@ -30,53 +31,46 @@ export function ScheduleCard() {
     } finally {
       setIsLoading(false);
     }
-  }
+  };
 
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-2 right-2 sm:bottom-3 sm:right-3 md:bottom-4 md:right-4 z-50 animate-in fade-in slide-in-from-bottom-4 duration-500">
+    // z-40: sits below the fixed header / mobile menu (z-50)
+    <div className="fixed bottom-4 right-4 z-40 flex items-center gap-1.5 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <Button
         as="div"
-        borderRadius="1.5rem"
+        borderRadius="9999px"
         duration={6000}
-        className="bg-black/40 backdrop-blur-xl text-white p-4 sm:p-5 md:p-6 shadow-2xl border-white/5"
-        containerClassName="h-auto w-auto p-[2px]"
-        borderClassName="bg-[radial-gradient(#FF9D00_40%,transparent_60%)]"
+        // Solid background: a translucent + backdrop-blur fill flickers during
+        // the entrance fade and lets the moving-border blob show through
+        className="bg-background text-foreground shadow-lg border-foreground/10"
+        containerClassName="h-auto w-auto p-[1.5px]"
+        borderClassName="bg-[radial-gradient(var(--foreground)_40%,transparent_60%)]"
       >
-        {/* Close Button wrapped in relative div to position correctly within the flex container if needed, 
-            but Button's inner div is flex-center. We need to handle positioning. 
-            The inner content should probably be a w-full h-full div. */}
-        <div className="relative w-full max-w-[280px] sm:max-w-xs md:max-w-sm">
-          <button
-            onClick={() => setIsVisible(false)}
-            className="absolute -top-2 -right-2 p-1 text-muted-foreground hover:text-foreground transition-colors z-20"
-            aria-label="Close"
-          >
-            <X size={16} />
-          </button>
-
-          <div className="flex flex-col gap-3 sm:gap-4">
-            <h3 className="text-base sm:text-lg font-bold flex items-center gap-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-              Let&apos;s Collaborate 🚀
-            </h3>
-            
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed text-left">
-              Let&apos;s discuss your project and how my expertise can help bring your vision to life.
-            </p>
-
-            <div className="flex gap-2 sm:gap-3 justify-end pt-1 sm:pt-2">
-              <button
-                onClick={handleSchedule}
-                disabled={isLoading}
-                className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-bold bg-primary text-black rounded-md hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all duration-200 shadow-lg disabled:cursor-not-allowed disabled:opacity-70"
-              >
-                {isLoading ? "Loading..." : "Schedule"}
-              </button>
-            </div>
-          </div>
-        </div>
+        <button
+          type="button"
+          onClick={handleSchedule}
+          disabled={isLoading}
+          className="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-medium disabled:opacity-70 disabled:cursor-wait"
+        >
+          {isLoading ? (
+            <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
+          ) : (
+            <CalendarDays className="w-4 h-4" aria-hidden="true" />
+          )}
+          Book a meeting
+        </button>
       </Button>
+
+      <button
+        type="button"
+        onClick={() => setIsVisible(false)}
+        className="grid place-items-center w-8 h-8 rounded-full bg-background border border-foreground/10 text-muted-foreground hover:text-foreground shadow-lg transition-colors"
+        aria-label="Dismiss booking button"
+      >
+        <X className="w-3.5 h-3.5" aria-hidden="true" />
+      </button>
     </div>
   );
 }
