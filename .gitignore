@@ -48,3 +48,15 @@ Thumbs.db
 
 # Optional: local env for VS Code settings
 .vscode/settings.json
+
+# local AI agent tooling / skills
+.agent/
+.agents/
+.claude/
+.codex/
+.cursor/
+.gemini/
+.kiro/
+.opencode/
+.rovodev/
+skills-lock.json
