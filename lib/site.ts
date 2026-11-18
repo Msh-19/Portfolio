@@ -5,7 +5,7 @@ export const siteConfig = {
   shortTitle: "Mohammed Shemim - Software Engineer",
   description:
     "Software engineer specializing in full-stack development, AI integration, and building scalable digital experiences.",
-  url: (process.env.NEXT_PUBLIC_APP_URL || "https://mohammedshemim.com").replace(
+  url: (process.env.NEXT_PUBLIC_APP_URL || "https://moshemim.dev").replace(
     /\/$/,
     "",
   ),
