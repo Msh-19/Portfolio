@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://mohammedshemim.com/sitemap.xml
+Sitemap: https://moshemim.dev/sitemap.xml
